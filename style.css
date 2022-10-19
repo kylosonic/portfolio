@@ -840,7 +840,7 @@ img{
         column-gap: 0;
     }
     .home__container{
-        padding_left:20px;
+        padding-left:20px;
     }
     .home__content{
         grid-template-columns: .25fr 3fr;
