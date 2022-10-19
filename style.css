@@ -235,6 +235,7 @@ img{
 /* home */
 .home__container{
     grid:1rem;
+    padding-left:20px;
 }
 .home__content{
     grid-template-columns: .5fr 3fr;
@@ -838,9 +839,6 @@ img{
     }
     .nav__list{
         column-gap: 0;
-    }
-    .home__container{
-        padding-left:20px;
     }
     .home__content{
         grid-template-columns: .25fr 3fr;
