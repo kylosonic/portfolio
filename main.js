@@ -111,6 +111,49 @@ qualTabs.forEach(tab => {
     });
 });
 
+// ==================== SKILL MODALS ====================
+const skillCards = document.querySelectorAll('.skills__card[data-skill]');
+const skillModals = document.querySelectorAll('.skill-modal');
+const skillModalCloses = document.querySelectorAll('.skill-modal__close');
+
+// Open modal on card click
+skillCards.forEach(card => {
+    card.addEventListener('click', () => {
+        const skillName = card.dataset.skill;
+        const modal = document.getElementById('skill-modal-' + skillName);
+        if (modal) {
+            modal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+    });
+});
+
+// Close modal on X button
+skillModalCloses.forEach(btn => {
+    btn.addEventListener('click', () => {
+        skillModals.forEach(m => m.classList.remove('active'));
+        document.body.style.overflow = '';
+    });
+});
+
+// Close modal on backdrop click
+skillModals.forEach(modal => {
+    modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    });
+});
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+        skillModals.forEach(m => m.classList.remove('active'));
+        document.body.style.overflow = '';
+    }
+});
+
 // ==================== SCROLL REVEAL (Intersection Observer) ====================
 const revealElements = document.querySelectorAll('.reveal');
 
