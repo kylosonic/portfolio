@@ -2,708 +2,511 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://kylosonic.github.io/portfolio/swiper-bundle.min.css">
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Nahom Girma — Flutter Developer & Software Engineer. Building beautiful cross-platform mobile apps.">
+    <title>Nahom Girma | Flutter Developer & Software Engineer</title>
 
-    <title>Nahom Girma | Flutter Developer</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <!-- ==================== HEADER / NAV ==================== -->
     <header class="header" id="header">
         <nav class="nav container">
-            <a href="#" class="nav__logo">Nahom</a>
+            <a href="#" class="nav__logo">
+                <span class="nav__logo-icon">N</span>
+                <span class="nav__logo-text">nahom</span>
+            </a>
+
             <div class="nav__menu" id="nav-menu">
-                <ul class="nav__list grid">
-                    <li class="nav__item">
-                        <a href="#home" class="nav__link active-link">
-                            <i class="uil uil-estate nav__icon"></i> Home
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#about" class="nav__link">
-                            <i class="uil uil-user nav__icon"></i> About
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#skills" class="nav__link">
-                            <i class="uil uil-file-alt nav__icon"></i> Skills
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#services" class="nav__link">
-                            <i class="uil uil-briefcase-alt nav__icon"></i> Services
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#portfolio" class="nav__link">
-                            <i class="uil uil-scenery nav__icon"></i> Portfolio
-                        </a>
-                    </li>
-                    <li class="nav__item">
-                        <a href="#contact" class="nav__link">
-                            <i class="uil uil-message nav__icon"></i> Contact me
-                        </a>
-                    </li>
+                <ul class="nav__list">
+                    <li class="nav__item"><a href="#services" class="nav__link">Services</a></li>
+                    <li class="nav__item"><a href="#portfolio" class="nav__link">Portfolio</a></li>
+                    <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
+                    <li class="nav__item"><a href="#contact" class="nav__link">Contact Me</a></li>
                 </ul>
                 <i class="uil uil-times nav__close" id="nav-close"></i>
             </div>
 
-            <div class="nav__btns">
+            <div class="nav__actions">
                 <i class="uil uil-moon change-theme" id="theme-button"></i>
-
+                <a href="assets/pdf/Nahom CV.pdf" download class="nav__cta" id="download-cv-btn">
+                    Download CV <i class="uil uil-download-alt"></i>
+                </a>
                 <div class="nav__toggle" id="nav-toggle">
-                    <i class="uil uil-apps"></i>
+                    <i class="uil uil-bars"></i>
                 </div>
             </div>
         </nav>
     </header>
+
     <main class="main">
-<section class="home section" id="home">
-    <div class="home__container grid">
-        <div class="home__content grid">
-            <div class="home__social">
-                <a href="https://linkedin.com/in/nahomwoldemichael" target="_blank" class="home__social-icon">
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" id="home">
+            <!-- Decorative gradient blobs -->
+            <div class="hero__blob hero__blob--pink"></div>
+            <div class="hero__blob hero__blob--blue"></div>
+            <div class="hero__blob hero__blob--purple"></div>
+
+            <!-- Floating social sidebar -->
+            <div class="hero__social">
+                <a href="https://instagram.com/kylosonic_" target="_blank" class="hero__social-link" aria-label="Instagram">
+                    <i class="uil uil-instagram"></i>
+                </a>
+                <a href="https://linkedin.com/in/nahomwoldemichael" target="_blank" class="hero__social-link" aria-label="LinkedIn">
                     <i class="uil uil-linkedin-alt"></i>
                 </a>
-                <a href="https://dribble.com" target="_blank" class="home__social-icon">
-                    <i class="uil uil-dribbble"></i>
-                </a>
-                <a href="https://github.com/kylosonic" target="_blank" class="home__social-icon">
+                <a href="https://github.com/kylosonic" target="_blank" class="hero__social-link" aria-label="GitHub">
                     <i class="uil uil-github-alt"></i>
                 </a>
             </div>
-            <div class="home__img">
-                <svg class="home__blob" viewBox="0 0 200 187" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                    <mask id="mask0" mask-type="alpha">
-                        <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 165.547 
-                        130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 129.362C2.45775 
-                        97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 -0.149132 97.9666 
-                        0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                    </mask>
-                    <g mask="url(#mask0)">
-                        <path d="M190.312 36.4879C206.582 62.1187 201.309 102.826 182.328 134.186C163.346 
-                        165.547 130.807 187.559 100.226 186.353C69.6454 185.297 41.0228 161.023 21.7403 
-                        129.362C2.45775 97.8511 -7.48481 59.1033 6.67581 34.5279C20.9871 10.1032 59.7028 
-                        -0.149132 97.9666 0.00163737C136.23 0.303176 174.193 10.857 190.312 36.4879Z"/>
-                        <image class="home__blob-img" x='12' y='18' xlink:href="/assets/img/about.jpg"/>
-                    </g>
-                </svg>
-            </div>
-            <div class="home__data">
-                <h1 class="home__title">Hi, I'm Nahom</h1>
-                <h3 class="home__subtitle">Fulltime Flutter Developer</h3>
-                <p class="home__description">High-level experience in cross-platform mobile app development using Flutter and building robust modern applications.</p>
-                <a href="#contact" class="button button--flex">
-                    Contact Me<i class="uil uil-message button__icon"></i>
-                </a>
-            </div>
-        </div>
-        <div class="home__scroll">
-            <a href="#about" class="home__scroll-button button--flex">
-                <i class="uil uil-mouse-alt home__scroll-mouse"></i>
-                <span class="home__scroll-name">Scroll down</span>
-                <i class="uil uil-arrow-down home__scroll-arrow"></i>
-            </a>
-        </div>
-    </div>
-</section>
-<section class="about section" id="about">
-    <h2 class="section__title">About Me</h2>
-    <span class="section__subtitle">My introduction</span>
-    <div class="about__container container grid">
-        <img src="assets/img/about.jpg" alt="" class="about__img">
-        <div class="about__data">
-            <p class="about__description">Flutter developer with extensive knowledge and experience in mobile technologies, cross-platform app development, UI/UX design, and creating complex digital platforms, delivering quality work.</p>
-            <div class="about__info">
-                <div>
-                    <span class="about__info-title">03+</span>
-                    <span class="about__info-name">Years <br> experience</span>
-                </div>
-                <div>
-                    <span class="about__info-title">15+</span>
-                    <span class="about__info-name">Completed <br> projects</span>
-                </div>
-                <div>
-                    <span class="about__info-title">02</span>
-                    <span class="about__info-name">Companies <br> worked</span>
-                </div>
-            </div>
-            <div class="about__buttons">
-                <a download="" href="/assets/pdf/Nahom CV.pdf" class="button button--flex">
-                    Download CV<i class="uil uil-download-alt button__icon"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="skills section" id="skills">
-    <h2 class="section__title">Skills</h2>
-    <span class="section__subtitle">My technical level</span>
-    <div class="skills__container container grid">
-        <div>
-            <div class="skills__content skills__open">
-                <div class="skills__header">
-                    <i class="uil uil-mobile-android skills__icon"></i>
-                    <div>
-                        <h1 class="skills__title">Mobile Developer</h1>
-                        <span class="skills__subtitle">More than 2 years</span>
-                    </div>
 
-                    <i class="uil uil-angle-down skills__arrow"></i>
+            <!-- Hero content -->
+            <div class="hero__container container">
+                <div class="hero__image-wrapper">
+                    <!-- Decorative arch behind photo -->
+                    <div class="hero__arch"></div>
+                    <!-- Decorative SVG curves -->
+                    <svg class="hero__curve hero__curve--1" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M250,50 C280,120 220,200 260,280 C280,330 240,370 200,380" stroke="#2DB87F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <svg class="hero__curve hero__curve--2" viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50,380 C80,320 30,250 70,180 C100,120 60,60 100,20" stroke="#2DB87F" stroke-width="2" fill="none" stroke-linecap="round"/>
+                    </svg>
+                    <!-- Profile photo -->
+                    <img src="assets/img/about.jpg" alt="Nahom Girma - Flutter Developer" class="hero__photo">
+
+                    <!-- Rotating "Let's Talk" badge -->
+                    <div class="hero__badge" id="hero-badge">
+                        <svg viewBox="0 0 100 100" class="hero__badge-svg">
+                            <defs>
+                                <path id="circlePath" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"/>
+                            </defs>
+                            <text>
+                                <textPath href="#circlePath" class="hero__badge-text">COME ON LET'S TALK • COME ON LET'S TALK •&nbsp;</textPath>
+                            </text>
+                        </svg>
+                        <i class="uil uil-arrow-up-right hero__badge-arrow"></i>
+                    </div>
                 </div>
-                <div class="skills__list grid">
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">Flutter</h3>
-                            <span class="skills__number">90%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__flutter" style="width: 90%;"></span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">Dart</h3>
-                            <span class="skills__number">85%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__dart" style="width: 85%;"></span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">Firebase</h3>
-                            <span class="skills__number">80%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__firebase" style="width: 80%;"></span>
-                        </div>
-                    </div>
+
+                <div class="hero__info">
+                    <h1 class="hero__name">Nahom<br>Girma</h1>
+                    <p class="hero__title">FLUTTER DEVELOPER // SOFTWARE ENGINEER</p>
                 </div>
             </div>
 
-            <div class="skills__content skills__close">
-                <div class="skills__header">
-                    <i class="uil uil-brackets-curly skills__icon"></i>
-                    <div>
-                        <h1 class="skills__title">Frontend Developer</h1>
-                        <span class="skills__subtitle">More than 3 years</span>
-                    </div>
+            <!-- Decorative outline shapes -->
+            <div class="hero__shape hero__shape--left"></div>
+            <div class="hero__shape hero__shape--right"></div>
 
-                    <i class="uil uil-angle-down skills__arrow"></i>
-                </div>
-                <div class="skills__list grid">
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">HTML</h3>
-                            <span class="skills__number">90%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__html" style="width: 90%;"></span>
-                        </div>
+            <!-- Company / Tech Logos Marquee -->
+            <div class="hero__logos">
+                <div class="hero__logos-track">
+                    <div class="hero__logos-slide">
+                        <span class="hero__logo-item">Flutter</span>
+                        <span class="hero__logo-item">Dart</span>
+                        <span class="hero__logo-item">Firebase</span>
+                        <span class="hero__logo-item">React</span>
+                        <span class="hero__logo-item">Node.js</span>
+                        <span class="hero__logo-item">Python</span>
+                        <span class="hero__logo-item">Figma</span>
+                        <span class="hero__logo-item">Git</span>
                     </div>
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">CSS</h3>
-                            <span class="skills__number">80%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__css" style="width: 80%;"></span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">JavaScript</h3>
-                            <span class="skills__number">80%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__js" style="width: 80%;"></span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">React</h3>
-                            <span class="skills__number">80%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__react" style="width: 80%;"></span>
-                        </div>
+                    <div class="hero__logos-slide" aria-hidden="true">
+                        <span class="hero__logo-item">Flutter</span>
+                        <span class="hero__logo-item">Dart</span>
+                        <span class="hero__logo-item">Firebase</span>
+                        <span class="hero__logo-item">React</span>
+                        <span class="hero__logo-item">Node.js</span>
+                        <span class="hero__logo-item">Python</span>
+                        <span class="hero__logo-item">Figma</span>
+                        <span class="hero__logo-item">Git</span>
                     </div>
                 </div>
-            </div>
-
-            <div class="skills__content skills__close">
-                <div class="skills__header">
-                    <i class="uil uil-server-network skills__icon"></i>
-                    <div>
-                        <h1 class="skills__title">Backend Developer</h1>
-                        <span class="skills__subtitle">More than 2 years</span>
-                    </div>
-
-                    <i class="uil uil-angle-down skills__arrow"></i>
-                </div>
-                <div class="skills__list grid">
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">Python</h3>
-                            <span class="skills__number">85%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__python" style="width: 85%;"></span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">Node Js</h3>
-                            <span class="skills__number">75%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__node" style="width: 75%;"></span>
-                        </div>
-                    </div>
-                    <div class="skills__data">
-                        <div class="skills__titles">
-                            <h3 class="skills__name">PHP</h3>
-                            <span class="skills__number">70%</span>
-                        </div>
-                        <div class="skills__bar">
-                            <span class="skills__percentage skills__php" style="width: 70%;"></span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-<section class="qualificaton section">
-    <h2 class="section__title">Qualification</h2>
-    <span class="section__subtitle">My personal journey</span>
-
-    <div class="qualification__Container container">
-        <div class="qualification__tabs">
-            <div class="qualification__button button--flex qualification__active" data-target='#work'>
-                <i class="uil uil-briefcase-alt qualification__icon"></i>
-                Work
-            </div>
-            <div class="qualification__button button--flex" data-target="#education">
-                <i class="uil uil-graduation-cap qualification__icon"></i>
-                Education
-            </div>
-        </div>
-        <div class="qualification__sections">
-            <div class="qualification__content qualification__active" data-content id="work">
-                
-                <div class="qualification__data">
-                    <div>
-                        <h3 class="qualification__title">Fulltime Flutter Developer</h3>
-                        <span class="qualification__subtitle">Rhobot Capitals</span>
-                        <div class="qualification__calendar">
-                            <i class="uil uil-calendar-alt"></i>
-                            2025 - Present
-                        </div>
-                        <p style="font-size: var(--smaller-font-size); color: var(--text-color); margin-top: 0.5rem; line-height: 1.4;">
-                            Developing and maintaining the Rhobot Capitals Forex trading mobile application and related services using Flutter.
-                        </p>
-                    </div>
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-                </div>
-
-                <div class="qualification__data">
-                    <div></div>
-
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-
-                    <div>
-                        <h3 class="qualification__title">LMS Co-Developer</h3>
-                        <span class="qualification__subtitle">rhobotcapitals.com Academy</span>
-                        <div class="qualification__calendar">
-                            <i class="uil uil-calendar-alt"></i>
-                            2025 - Present  
-                        </div>
-                        <p style="font-size: var(--smaller-font-size); color: var(--text-color); margin-top: 0.5rem; line-height: 1.4;">
-                            Co-developer for the academy. Built the entire Learning Management System (LMS) platform with my partner from the ground up.
-                        </p>
-                    </div>
-                </div>
-
-                <div class="qualification__data">
-                    <div>
-                        <h3 class="qualification__title">Flutter App Dev</h3>
-                        <span class="qualification__subtitle">App Development</span>
-                        <div class="qualification__calendar">
-                            <i class="uil uil-calendar-alt"></i>
-                            2022 - 2023 
-                        </div>
-                    </div>
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-                </div>
-
-                <div class="qualification__data">
-                    <div></div>
-
-                    <div>
-                        <span class="qualification__rounder"></span>
-                    </div>
-                    
-                    <div>
-                        <h3 class="qualification__title">Ui/Ux Design</h3>
-                        <span class="qualification__subtitle">Udemy</span>
-                        <div class="qualification__calendar">
-                            <i class="uil uil-calendar-alt"></i>
-                            2022 - 2022  
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="qualification__content" data-content id="education">
-                <div class="qualification__data">
-                    <div>
-                        <h3 class="qualification__title">Software Engineering</h3>
-                        <span class="qualification__subtitle">ALX-Africa and Holberton School</span>
-                        <div class="qualification__calendar">
-                            <i class="uil uil-calendar-alt"></i>
-                            2022 - 2023  
-                        </div>
-                    </div>
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-                </div>
-                <div class="qualification__data">
-                    <div></div>
-
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-
-                    <div>
-                        <h3 class="qualification__title">Web Development</h3>
-                        <span class="qualification__subtitle">Freelance Ethiopia</span>
-                        <div class="qualification__calendar">
-                            <i class="uil uil-calendar-alt"></i>
-                            2022 - 2022 
-                        </div>
-                    </div>
-
-                </div>
-                <div class="qualification__data">
-                    <div>
-                        <h3 class="qualification__title">Frontend Development</h3>
-                        <span class="qualification__subtitle">The App Brewery</span>
-                        <div class="qualification__calendar">
-                            <i class="uil uil-calendar-alt"></i>
-                            2022 - 2022  
-                        </div>
-                    </div>
-                    <div>
-                        <span class="qualification__rounder"></span>
-                        <span class="qualification__line"></span>
-                    </div>
-                </div>
-                <div class="qualification__data">
-                    <div></div>
-
-                    <div>
-                        <span class="qualification__rounder"></span>
-                    </div>
-
-                    <div>
-                        <h3 class="qualification__title">Freelance Website Building</h3>
-                        <span class="qualification__subtitle">Fiverr</span>
-                        <div class="qualification__calendar">
-                            <i class="uil uil-calendar-alt"></i>
-                            2021 - 2022
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<section class="services section" id="services">
-    <h2 class="section__title">Services</h2>
-    <span class="section__subtitle">What I offer</span>
-
-    <div class="services__container container grid">
-    
-    <div class="services__content">
-        <i class="uil uil-apps services__icon"></i>
-        <h3 class="services__title">App <br> Developer</h3>
-
-        <span class="button button--flex button--small button--link services__button">
-        View More
-        <i class="uil uil-arrow-right button__icon"></i>
-        </span>
-
-        <div class="services__modal">
-            <div class="services__modal-content">
-                <h4 class="services__modal-title">App <br> Developer</h4>
-                <i class="uil uil-times services__modal-close"></i>
-
-                <ul class="services__modal-services grid">
-                    <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__modal-icon"></i>
-                        <p>Cross-platform mobile apps (Flutter).</p>
-                    </li>
-                    <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__modal-icon"></i>
-                        <p>Custom API integration.</p>
-                    </li>
-                    <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__modal-icon"></i>
-                        <p>Smooth mobile UX/UI elements.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="services__content">
-            <i class="uil uil-arrow services__icon"></i>
-            <h3 class="services__title">LMS <br> Development</h3>
-        
-        <span class="button button--flex button--small button--link services__button">
-            View More
-            <i class="uil uil-arrow-right button__icon"></i>
-        </span>
-
-        <div class="services__modal">
-            <div class="services__modal-content">
-                <h4 class="services__modal-title">LMS <br> Development</h4>
-                <i class="uil uil-times services__modal-close"></i>
-
-                <ul class="services__modal-services grid">
-                    <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__modal-icon"></i>
-                        <p>I build custom Learning Management Systems.</p>
-                    </li>
-                    <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__modal-icon"></i>
-                        <p>Complete academic platform integration.</p>
-                    </li>
-                    <li class="services__modal-service">
-                        <i class="uil uil-check-circle services__modal-icon"></i>
-                        <p>User-friendly student/teacher dashboards.</p>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <div class="services__content">
-        <i class="uil uil-web-grid services__icon"></i>
-        <h3 class="services__title">Full-Stack <br> Development</h3>
-    
-    <span class="button button--flex button--small button--link services__button">
-        View More
-        <i class="uil uil-arrow-right button__icon"></i>
-    </span>
-
-    <div class="services__modal">
-        <div class="services__modal-content">
-            <h4 class="services__modal-title">Full-Stack <br> Developer</h4>
-            <i class="uil uil-times services__modal-close"></i>
-
-            <ul class="services__modal-services grid">
-                <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>I develop dynamic frontend interfaces.</p>
-                </li>
-                <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Secure and robust backend architecture.</p>
-                </li>
-                <li class="services__modal-service">
-                    <i class="uil uil-check-circle services__modal-icon"></i>
-                    <p>Database management and integration.</p>
-                </li>
-            </ul>
-        </div>
-    </div>
-    </div>
-
-    </div>
-</section>
-
-<section class="portfolio section" id="portfolio">
-            <h2 class="section__title">Portfolio</h2>
-            <span class="section__subtitle">Most recent work</span>
-
-            <div class="portfolio__container container swiper mySwiper">
-                <div class="swiper-wrapper">
-                    
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="https://kylosonic.github.io/portfolio/assets/img/website.jpg" alt="" class="portfolio__img" style="object-fit: cover;">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Rhobot Capitals LMS</h3>
-                            <p class="portfolio__description">A complete Learning Management Platform built from the ground up tailored for modern educational needs.</p>
-                            <a href="https://rhobotcapitals.com/" target="_blank" class="button button--flex button--small portfolio__button">
-                                View Academy
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="portfolio__content grid swiper-slide">
-                        <img src="assets/img/website2.jpg" alt="" class="portfolio__img">
-
-                        <div class="portfolio__data">
-                            <h3 class="portfolio__title">Brand Design</h3>
-                            <p class="portfolio__description">Website adaptable to all devices, with ui components and animated interactions.</p>
-                            <a href="#" class="button button--flex button--small portfolio__button">
-                                Demo
-                                <i class="uil uil-arrow-right button__icon"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-button-next">
-                    <i class="uil uil-angle-right-b swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-button-prev">
-                    <i class="uil uil-angle-left-b swiper-portfolio-icon"></i>
-                </div>
-                <div class="swiper-pagination"></div>
-
             </div>
         </section>
 
-        <section class="project section">
-            <div class="project__bg">
-                <div class="project__container container grid">
-                    <div class="project__data">
-                        <h2 class="project__title">You have a new project</h2>
-                        <p class="project__description">Contact me now and get a modern, robust solution tailored to your needs.</p>
-                        <a href="#contact" class="button button--flex button--white">
-                            Contact Me
-                            <i class="uil uil-message project__icon button__icon"></i>
+        <!-- ==================== ABOUT ==================== -->
+        <section class="about section" id="about">
+            <div class="about__container container">
+                <div class="about__image-col reveal">
+                    <img src="assets/img/about.jpg" alt="Nahom Girma" class="about__img">
+                </div>
+                <div class="about__data reveal">
+                    <span class="section__subtitle">About Me</span>
+                    <h2 class="section__title">My Introduction</h2>
+                    <p class="about__description">
+                        Flutter developer with extensive knowledge and experience in mobile technologies, cross-platform app development, UI/UX design, and creating complex digital platforms, delivering quality work.
+                    </p>
+                    <div class="about__stats">
+                        <div class="about__stat">
+                            <span class="about__stat-number">03+</span>
+                            <span class="about__stat-label">Years<br>Experience</span>
+                        </div>
+                        <div class="about__stat">
+                            <span class="about__stat-number">15+</span>
+                            <span class="about__stat-label">Completed<br>Projects</span>
+                        </div>
+                        <div class="about__stat">
+                            <span class="about__stat-number">02</span>
+                            <span class="about__stat-label">Companies<br>Worked</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SKILLS ==================== -->
+        <section class="skills section" id="skills">
+            <div class="skills__container container">
+                <div class="skills__header reveal">
+                    <span class="section__subtitle">Skills</span>
+                    <h2 class="section__title">My Technical Level</h2>
+                </div>
+                <div class="skills__grid">
+                    <div class="skills__card reveal">
+                        <i class="uil uil-mobile-android skills__card-icon"></i>
+                        <h3 class="skills__card-title">Mobile Development</h3>
+                        <div class="skills__tags">
+                            <span class="skills__tag">Flutter</span>
+                            <span class="skills__tag">Dart</span>
+                            <span class="skills__tag">Firebase</span>
+                            <span class="skills__tag">REST APIs</span>
+                            <span class="skills__tag">State Management</span>
+                        </div>
+                    </div>
+                    <div class="skills__card reveal">
+                        <i class="uil uil-brackets-curly skills__card-icon"></i>
+                        <h3 class="skills__card-title">Frontend Development</h3>
+                        <div class="skills__tags">
+                            <span class="skills__tag">HTML</span>
+                            <span class="skills__tag">CSS</span>
+                            <span class="skills__tag">JavaScript</span>
+                            <span class="skills__tag">React</span>
+                            <span class="skills__tag">Responsive Design</span>
+                        </div>
+                    </div>
+                    <div class="skills__card reveal">
+                        <i class="uil uil-server-network skills__card-icon"></i>
+                        <h3 class="skills__card-title">Backend Development</h3>
+                        <div class="skills__tags">
+                            <span class="skills__tag">Python</span>
+                            <span class="skills__tag">Node.js</span>
+                            <span class="skills__tag">PHP</span>
+                            <span class="skills__tag">Databases</span>
+                            <span class="skills__tag">API Design</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== QUALIFICATION ==================== -->
+        <section class="qualification section" id="qualification">
+            <div class="qualification__container container">
+                <div class="qualification__header reveal">
+                    <span class="section__subtitle">Qualification</span>
+                    <h2 class="section__title">My Journey</h2>
+                </div>
+
+                <div class="qualification__tabs">
+                    <button class="qualification__tab qualification__tab--active" data-target="#work">
+                        <i class="uil uil-briefcase-alt"></i> Work
+                    </button>
+                    <button class="qualification__tab" data-target="#education">
+                        <i class="uil uil-graduation-cap"></i> Education
+                    </button>
+                </div>
+
+                <div class="qualification__content qualification__content--active" id="work">
+                    <div class="qualification__timeline">
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Fulltime Flutter Developer</h3>
+                                <span class="qualification__company">Rhobot Capitals</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2025 — Present</span>
+                                <p class="qualification__desc">Developing and maintaining the Rhobot Capitals Forex trading mobile application and related services using Flutter.</p>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>LMS Co-Developer</h3>
+                                <span class="qualification__company">rhobotcapitals.com Academy</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2025 — Present</span>
+                                <p class="qualification__desc">Built the entire Learning Management System (LMS) platform with my partner from the ground up.</p>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Flutter App Dev</h3>
+                                <span class="qualification__company">App Development</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2022 — 2023</span>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>UI/UX Design</h3>
+                                <span class="qualification__company">Udemy</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="qualification__content" id="education">
+                    <div class="qualification__timeline">
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Software Engineering</h3>
+                                <span class="qualification__company">ALX-Africa & Holberton School</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2022 — 2023</span>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Web Development</h3>
+                                <span class="qualification__company">Freelance Ethiopia</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2022</span>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Frontend Development</h3>
+                                <span class="qualification__company">The App Brewery</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2022</span>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Freelance Website Building</h3>
+                                <span class="qualification__company">Fiverr</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2021 — 2022</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== SERVICES ==================== -->
+        <section class="services section" id="services">
+            <div class="services__container container">
+                <div class="services__header reveal">
+                    <span class="section__subtitle">Services</span>
+                    <h2 class="section__title">What I Offer</h2>
+                </div>
+                <div class="services__grid">
+                    <div class="services__card reveal">
+                        <div class="services__card-number">01</div>
+                        <i class="uil uil-apps services__card-icon"></i>
+                        <h3 class="services__card-title">App<br>Development</h3>
+                        <p class="services__card-desc">Cross-platform mobile apps with Flutter. Custom API integration. Smooth, pixel-perfect UX/UI.</p>
+                        <a href="#contact" class="services__card-link">
+                            Learn more <i class="uil uil-arrow-right"></i>
                         </a>
                     </div>
-
-                    <img src="https://kylosonic.github.io/portfolio/assets/img/project.jpg" alt="" class="project__img">
+                    <div class="services__card reveal">
+                        <div class="services__card-number">02</div>
+                        <i class="uil uil-arrow services__card-icon"></i>
+                        <h3 class="services__card-title">LMS<br>Development</h3>
+                        <p class="services__card-desc">Custom Learning Management Systems. Complete academic platform integration. Student/teacher dashboards.</p>
+                        <a href="#contact" class="services__card-link">
+                            Learn more <i class="uil uil-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="services__card reveal">
+                        <div class="services__card-number">03</div>
+                        <i class="uil uil-web-grid services__card-icon"></i>
+                        <h3 class="services__card-title">Full-Stack<br>Development</h3>
+                        <p class="services__card-desc">Dynamic frontend interfaces. Secure backend architecture. Database management and integration.</p>
+                        <a href="#contact" class="services__card-link">
+                            Learn more <i class="uil uil-arrow-right"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
-    
-    <section class="contact section" id="contact">
-        <h2 class="section__title">Contact Me</h2>
-        <span class="section__subtitle">Get in touch</span>
 
-        <div class="contact__container container grid">
-            <div>
-                <div class="contact__information">
-                    <i class="uil uil-phone contact__icon"></i>
-
-                    <div>
-                        <h3 class="contact__title">Call Me</h3>
-                            <span class="contact__subtitle">+251941927360</span>
-                    </div>
+        <!-- ==================== PORTFOLIO ==================== -->
+        <section class="portfolio section" id="portfolio">
+            <div class="portfolio__container container">
+                <div class="portfolio__header reveal">
+                    <span class="section__subtitle">Portfolio</span>
+                    <h2 class="section__title">Recent Work</h2>
                 </div>
-                <div class="contact__information">
-                    <i class="uil uil-envelope contact__icon"></i>
-
-                    <div>
-                        <h3 class="contact__title">Email</h3>
-                            <span class="contact__subtitle">nahomg761@gmail.com</span>
+                <div class="portfolio__grid">
+                    <div class="portfolio__card reveal">
+                        <div class="portfolio__card-img">
+                            <img src="https://kylosonic.github.io/portfolio/assets/img/website.jpg" alt="Rhobot Capitals LMS">
+                            <div class="portfolio__card-overlay">
+                                <a href="https://rhobotcapitals.com/" target="_blank" class="portfolio__card-btn">
+                                    View Project <i class="uil uil-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-info">
+                            <span class="portfolio__card-tag">LMS Platform</span>
+                            <h3 class="portfolio__card-title">Rhobot Capitals Academy</h3>
+                            <p class="portfolio__card-desc">A complete Learning Management Platform built from the ground up tailored for modern educational needs.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="contact__information">
-                    <i class="uil uil-map-marker contact__icon"></i>
-
-                    <div>
-                        <h3 class="contact__title">Location</h3>
-                            <span class="contact__subtitle">Ethiopia - Addis Ababa, Lafto </span>
+                    <div class="portfolio__card reveal">
+                        <div class="portfolio__card-img">
+                            <img src="assets/img/website2.jpg" alt="Brand Design">
+                            <div class="portfolio__card-overlay">
+                                <a href="#" class="portfolio__card-btn">
+                                    View Project <i class="uil uil-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-info">
+                            <span class="portfolio__card-tag">Web Design</span>
+                            <h3 class="portfolio__card-title">Brand Design</h3>
+                            <p class="portfolio__card-desc">Website adaptable to all devices, with UI components and animated interactions.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <form action="" class="contact__form grid">
-                <div class="contact__inputs grid">
-                    <div class="contact__content">
-                        <label for="" class="contact__label">Name</label>
-                        <input type="text" class="contact__input">
-                    </div>
-                    <div class="contact__content">
-                        <label for="" class="contact__label">Email</label>
-                        <input type="email" class="contact__input">
-                    </div>
-                </div>
-                <div class="contact__content">
-                    <label for="" class="contact__label">Project</label>
-                    <input type="text" class="contact__input">
-                </div>
-                <div class="contact__content">
-                    <label for="" class="contact__label">Message</label>
-                    <textarea name="" id="" cols="0" rows="7" class="contact__input"></textarea>
-                </div>
-
-                <div>
-                    <a href="mailto:nahomg761@gmail.com" class="button button--flex">
-                        Send Message
-                        <i class="uil uil-message button__icon"></i>
+        <!-- ==================== CTA / PROJECT BANNER ==================== -->
+        <section class="cta section">
+            <div class="cta__container container reveal">
+                <div class="cta__data">
+                    <h2 class="cta__title">Have a new project?</h2>
+                    <p class="cta__desc">Contact me now and get a modern, robust solution tailored to your needs.</p>
+                    <a href="#contact" class="cta__btn">
+                        Contact Me <i class="uil uil-message"></i>
                     </a>
                 </div>
-            </form>
-        </div>
-    </section>
-    </main>
-    <footer class="footer">
-        <div class="footer__bg">
-            <div class="footer__container container grid">
-                <div>
-                    <h1 class="footer__title">Nahom</h1>
-                    <span class="footer__subtitle">Flutter Developer</span>
+                <img src="https://kylosonic.github.io/portfolio/assets/img/project.jpg" alt="" class="cta__img">
+            </div>
+        </section>
+
+        <!-- ==================== CONTACT ==================== -->
+        <section class="contact section" id="contact">
+            <div class="contact__container container">
+                <div class="contact__info reveal">
+                    <span class="section__subtitle">Contact Me</span>
+                    <h2 class="section__title">Get In Touch</h2>
+
+                    <div class="contact__details">
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="uil uil-phone"></i>
+                            </div>
+                            <div>
+                                <h3 class="contact__detail-title">Call Me</h3>
+                                <span class="contact__detail-value">+251941927360</span>
+                            </div>
+                        </div>
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="uil uil-envelope"></i>
+                            </div>
+                            <div>
+                                <h3 class="contact__detail-title">Email</h3>
+                                <span class="contact__detail-value">nahomg761@gmail.com</span>
+                            </div>
+                        </div>
+                        <div class="contact__detail">
+                            <div class="contact__detail-icon">
+                                <i class="uil uil-map-marker"></i>
+                            </div>
+                            <div>
+                                <h3 class="contact__detail-title">Location</h3>
+                                <span class="contact__detail-value">Ethiopia — Addis Ababa, Lafto</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
-                <ul class="footer__links">
-                    <li>
-                        <a href="#services"  class="footer__link">Services</a>
-                    </li>
-                    <li>
-                        <a href="#portfolio"  class="footer__link">Portfolio</a>
-                    </li>
-                    <li>
-                        <a href="#contact"  class="footer__link">Contact-me</a>
-                    </li>
-                </ul>
+                <form class="contact__form reveal" id="contact-form">
+                    <div class="contact__form-row">
+                        <div class="contact__field">
+                            <label for="contact-name">Name</label>
+                            <input type="text" id="contact-name" placeholder="Your name" required>
+                        </div>
+                        <div class="contact__field">
+                            <label for="contact-email">Email</label>
+                            <input type="email" id="contact-email" placeholder="Your email" required>
+                        </div>
+                    </div>
+                    <div class="contact__field">
+                        <label for="contact-project">Project</label>
+                        <input type="text" id="contact-project" placeholder="Project name">
+                    </div>
+                    <div class="contact__field">
+                        <label for="contact-message">Message</label>
+                        <textarea id="contact-message" rows="5" placeholder="Write your message..." required></textarea>
+                    </div>
+                    <a href="mailto:nahomg761@gmail.com" class="contact__submit">
+                        Send Message <i class="uil uil-message"></i>
+                    </a>
+                </form>
+            </div>
+        </section>
+    </main>
 
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <h2 class="footer__logo">Nahom</h2>
+                    <p class="footer__tagline">Flutter Developer</p>
+                </div>
+                <ul class="footer__links">
+                    <li><a href="#services" class="footer__link">Services</a></li>
+                    <li><a href="#portfolio" class="footer__link">Portfolio</a></li>
+                    <li><a href="#about" class="footer__link">About</a></li>
+                    <li><a href="#contact" class="footer__link">Contact</a></li>
+                </ul>
                 <div class="footer__socials">
-                    <a href="https://instagram.com/kylosonic_" class="footer__social" target="_blank">
+                    <a href="https://instagram.com/kylosonic_" target="_blank" class="footer__social" aria-label="Instagram">
                         <i class="uil uil-instagram"></i>
                     </a>
-                    <a href="https://t.me/kylosonic" class="footer__social" target="_blank">
+                    <a href="https://t.me/kylosonic" target="_blank" class="footer__social" aria-label="Telegram">
                         <i class="uil uil-telegram-alt"></i>
                     </a>
-                    <a href="https://twitter.com/kylosonic" class="footer__social" target="_blank">
+                    <a href="https://twitter.com/kylosonic" target="_blank" class="footer__social" aria-label="Twitter">
                         <i class="uil uil-twitter-alt"></i>
+                    </a>
+                    <a href="https://github.com/kylosonic" target="_blank" class="footer__social" aria-label="GitHub">
+                        <i class="uil uil-github-alt"></i>
                     </a>
                 </div>
             </div>
-
-          <p class="footer__copy">&#169; 2026 Nahom Woldemichael. All rights reserved.</p>  
+            <div class="footer__bottom">
+                <p>&copy; 2026 Nahom Woldemichael. All rights reserved.</p>
+            </div>
         </div>
     </footer>
-    <a href="#" class="scrollup" id="scroll-up">
-        <i class="uil uil-arrow-up scrollup__icon"></i>
+
+    <!-- Scroll to top -->
+    <a href="#home" class="scrolltop" id="scroll-up" aria-label="Scroll to top">
+        <i class="uil uil-arrow-up"></i>
     </a>
-    <script src="https://kylosonic.github.io/portfolio/swiper-bundle.min.js"></script>
-    <script src="https://kylosonic.github.io/portfolio/main.js"></script>
+
+    <script src="main.js"></script>
 </body>
 </html>
