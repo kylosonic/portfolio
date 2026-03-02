@@ -1551,7 +1551,8 @@ body.dark-theme .hero__arch {
     }
 
     .nav__cta {
-        display: none;
+        padding: 0.5rem 1rem;
+        font-size: var(--fs-xs);
     }
 
     .nav__menu {
