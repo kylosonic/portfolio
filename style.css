@@ -451,12 +451,14 @@ body.dark-theme .hero__arch {
     object-fit: cover;
     object-position: top center;
     border-radius: 160px 160px 20px 20px;
-    filter: grayscale(60%);
-    transition: filter 0.5s ease;
+    mix-blend-mode: multiply;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
 }
 
-.hero__photo:hover {
-    filter: grayscale(0%);
+
+body.dark-theme .hero__photo {
+    mix-blend-mode: screen;
 }
 
 /* SVG Curves */
@@ -619,15 +621,20 @@ body.dark-theme .hero__arch {
 
 .about__img {
     border-radius: var(--radius-xl);
-    box-shadow: var(--shadow-lg);
     transition: var(--transition);
     aspect-ratio: 4/5;
     object-fit: cover;
+    mix-blend-mode: multiply;
+    -webkit-mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 0%, black 85%, transparent 100%);
+}
+
+body.dark-theme .about__img {
+    mix-blend-mode: screen;
 }
 
 .about__img:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: var(--shadow-xl);
 }
 
 .about__description {
