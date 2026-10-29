@@ -9,19 +9,27 @@ const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
 const navLinks = document.querySelectorAll('.nav__link');
 
+function setNavState(isOpen) {
+    navToggle?.setAttribute('aria-expanded', String(isOpen));
+}
+
 if (navToggle) {
     navToggle.addEventListener('click', () => {
         navMenu.classList.add('show-menu');
+        setNavState(true);
     });
 }
 if (navClose) {
     navClose.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
+        setNavState(false);
+        navToggle?.focus();
     });
 }
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('show-menu');
+        setNavState(false);
     });
 });
 
@@ -115,15 +123,44 @@ qualTabs.forEach(tab => {
 const skillCards = document.querySelectorAll('.skills__card[data-skill]');
 const skillModals = document.querySelectorAll('.skill-modal');
 const skillModalCloses = document.querySelectorAll('.skill-modal__close');
+let lastFocusedElement = null;
+
+function closeSkillModals(restoreFocus = true) {
+    skillModals.forEach(modal => {
+        modal.classList.remove('active');
+        modal.setAttribute('aria-hidden', 'true');
+    });
+    document.body.style.overflow = '';
+
+    if (restoreFocus && lastFocusedElement) {
+        lastFocusedElement.focus();
+    }
+}
+
+function openSkillModal(card) {
+    const skillName = card.dataset.skill;
+    const modal = document.getElementById('skill-modal-' + skillName);
+    if (!modal) return;
+
+    lastFocusedElement = card;
+    modal.classList.add('active');
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    window.setTimeout(() => {
+        modal.querySelector('.skill-modal__close')?.focus();
+    }, 350);
+}
 
 // Open modal on card click
 skillCards.forEach(card => {
     card.addEventListener('click', () => {
-        const skillName = card.dataset.skill;
-        const modal = document.getElementById('skill-modal-' + skillName);
-        if (modal) {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        openSkillModal(card);
+    });
+
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openSkillModal(card);
         }
     });
 });
@@ -131,8 +168,7 @@ skillCards.forEach(card => {
 // Close modal on X button
 skillModalCloses.forEach(btn => {
     btn.addEventListener('click', () => {
-        skillModals.forEach(m => m.classList.remove('active'));
-        document.body.style.overflow = '';
+        closeSkillModals();
     });
 });
 
@@ -140,17 +176,34 @@ skillModalCloses.forEach(btn => {
 skillModals.forEach(modal => {
     modal.addEventListener('click', (e) => {
         if (e.target === modal) {
-            modal.classList.remove('active');
-            document.body.style.overflow = '';
+            closeSkillModals();
         }
     });
 });
 
-// Close modal on Escape key
+// Close modal on Escape key and keep keyboard focus inside the open dialog.
 document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        skillModals.forEach(m => m.classList.remove('active'));
-        document.body.style.overflow = '';
+        closeSkillModals();
+        return;
+    }
+
+    if (e.key === 'Tab') {
+        const openModal = document.querySelector('.skill-modal.active');
+        if (!openModal) return;
+
+        const focusable = [...openModal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')];
+        if (!focusable.length) return;
+
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+        if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+        } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+        }
     }
 });
 

@@ -3,23 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Nahom Girma — Flutter Developer & Software Engineer. Building beautiful cross-platform mobile apps.">
-    <title>Nahom Girma | Flutter Developer & Software Engineer</title>
+    <meta name="description" content="Nahom Girma is a software engineer and founder building full-stack, AI automation, and mobile products. Explore Nourish, FreightPilot, Stealth Overlay, and Rhobot.">
+    <title>Nahom Girma | Full-Stack, AI Automation &amp; Mobile Engineer</title>
 
     <!-- Open Graph / Social Share -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nahomwoldemichael.vercel.app/">
     <meta property="og:site_name" content="Nahom Girma | Portfolio">
-    <meta property="og:title" content="Nahom Girma | Flutter Developer &amp; Software Engineer">
-    <meta property="og:description" content="Nahom Girma — Flutter Developer &amp; Software Engineer. Building beautiful cross-platform mobile apps.">
-    <meta property="og:image" content="https://nahomwoldemichael.vercel.app/assets/img/og-image.jpg">
+    <meta property="og:title" content="Nahom Girma | Full-Stack, AI Automation &amp; Mobile Engineer">
+    <meta property="og:description" content="Software engineer and founder building full-stack, AI automation, and mobile products.">
+    <meta property="og:image" content="https://nahomwoldemichael.vercel.app/assets/img/og-image-v2.png">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Nahom Girma — Flutter Developer &amp; Software Engineer">
+    <meta property="og:image:alt" content="Nahom Girma, software engineer and founder">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Nahom Girma | Flutter Developer &amp; Software Engineer">
-    <meta name="twitter:description" content="Nahom Girma — Flutter Developer &amp; Software Engineer. Building beautiful cross-platform mobile apps.">
-    <meta name="twitter:image" content="https://nahomwoldemichael.vercel.app/assets/img/og-image.jpg">
+    <meta name="twitter:title" content="Nahom Girma | Full-Stack, AI Automation &amp; Mobile Engineer">
+    <meta name="twitter:description" content="Software engineer and founder building full-stack, AI automation, and mobile products.">
+    <meta name="twitter:image" content="https://nahomwoldemichael.vercel.app/assets/img/og-image-v2.png">
+    <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,6 +34,7 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <!-- ==================== HEADER / NAV ==================== -->
     <header class="header" id="header">
@@ -49,22 +51,26 @@
                     <li class="nav__item"><a href="#about" class="nav__link">About</a></li>
                     <li class="nav__item"><a href="#contact" class="nav__link">Contact Me</a></li>
                 </ul>
-                <i class="uil uil-times nav__close" id="nav-close"></i>
+                <button type="button" class="nav__close" id="nav-close" aria-label="Close navigation">
+                    <i class="uil uil-times"></i>
+                </button>
             </div>
 
             <div class="nav__actions">
-                <i class="uil uil-moon change-theme" id="theme-button"></i>
-                <a href="assets/pdf/Nahom CV.pdf" download class="nav__cta" id="download-cv-btn">
+                <button type="button" class="change-theme" id="theme-button" aria-label="Toggle color theme">
+                    <i class="uil uil-moon"></i>
+                </button>
+                <a href="assets/pdf/Nahom_Girma_Woldemichael_Resume.pdf" download class="nav__cta" id="download-cv-btn">
                     Download CV <i class="uil uil-download-alt"></i>
                 </a>
-                <div class="nav__toggle" id="nav-toggle">
+                <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false">
                     <i class="uil uil-bars"></i>
-                </div>
+                </button>
             </div>
         </nav>
     </header>
 
-    <main class="main">
+    <main class="main" id="main-content">
 
         <!-- ==================== HERO ==================== -->
         <section class="hero" id="home">
@@ -99,7 +105,7 @@
                         <path d="M50,380 C80,320 30,250 70,180 C100,120 60,60 100,20" stroke="#2DB87F" stroke-width="2" fill="none" stroke-linecap="round"/>
                     </svg>
                     <!-- Profile photo -->
-                    <img src="assets/img/about.jpg" alt="Nahom Girma - Flutter Developer" class="hero__photo" width="400" height="500" fetchpriority="high">
+                    <img src="assets/img/about.jpg" alt="Nahom Girma, software engineer and founder" class="hero__photo" width="400" height="500" fetchpriority="high">
 
                     <!-- Rotating "Let's Talk" badge -->
                     <div class="hero__badge" id="hero-badge">
@@ -117,7 +123,7 @@
 
                 <div class="hero__info">
                     <h1 class="hero__name">Nahom<br>Girma</h1>
-                    <p class="hero__title">FLUTTER DEVELOPER // SOFTWARE ENGINEER</p>
+                    <p class="hero__title">FULL-STACK ENGINEER // AI AUTOMATION &amp; MOBILE PRODUCTS</p>
                 </div>
             </div>
 
@@ -129,24 +135,24 @@
             <div class="hero__logos">
                 <div class="hero__logos-track">
                     <div class="hero__logos-slide">
-                        <span class="hero__logo-item">Flutter</span>
-                        <span class="hero__logo-item">Dart</span>
-                        <span class="hero__logo-item">Firebase</span>
+                        <span class="hero__logo-item">TypeScript</span>
                         <span class="hero__logo-item">React</span>
-                        <span class="hero__logo-item">Node.js</span>
+                        <span class="hero__logo-item">Next.js</span>
+                        <span class="hero__logo-item">Flutter</span>
                         <span class="hero__logo-item">Python</span>
-                        <span class="hero__logo-item">Figma</span>
-                        <span class="hero__logo-item">Git</span>
+                        <span class="hero__logo-item">FastAPI</span>
+                        <span class="hero__logo-item">PostgreSQL</span>
+                        <span class="hero__logo-item">AI Workflows</span>
                     </div>
                     <div class="hero__logos-slide" aria-hidden="true">
-                        <span class="hero__logo-item">Flutter</span>
-                        <span class="hero__logo-item">Dart</span>
-                        <span class="hero__logo-item">Firebase</span>
+                        <span class="hero__logo-item">TypeScript</span>
                         <span class="hero__logo-item">React</span>
-                        <span class="hero__logo-item">Node.js</span>
+                        <span class="hero__logo-item">Next.js</span>
+                        <span class="hero__logo-item">Flutter</span>
                         <span class="hero__logo-item">Python</span>
-                        <span class="hero__logo-item">Figma</span>
-                        <span class="hero__logo-item">Git</span>
+                        <span class="hero__logo-item">FastAPI</span>
+                        <span class="hero__logo-item">PostgreSQL</span>
+                        <span class="hero__logo-item">AI Workflows</span>
                     </div>
                 </div>
             </div>
@@ -162,7 +168,7 @@
                     <span class="section__subtitle">About Me</span>
                     <h2 class="section__title">My Introduction</h2>
                     <p class="about__description">
-                        Flutter developer with extensive knowledge and experience in mobile technologies, cross-platform app development, UI/UX design, and creating complex digital platforms, delivering quality work.
+                        Software engineer and founder building AI-enabled products for web and mobile. My recent work includes Nourish, an offline-first Ethiopian nutrition tracker; FreightPilot, a logistics operations SaaS; and Stealth Overlay, an AI workflow consultancy. I handle frontend, API, data, testing, deployment, and release.
                     </p>
                     <div class="about__stats">
                         <div class="about__stat">
@@ -174,8 +180,8 @@
                             <span class="about__stat-label">Completed<br>Projects</span>
                         </div>
                         <div class="about__stat">
-                            <span class="about__stat-number">02</span>
-                            <span class="about__stat-label">Companies<br>Worked</span>
+                            <span class="about__stat-number">03</span>
+                            <span class="about__stat-label">Startup<br>Products</span>
                         </div>
                     </div>
                 </div>
@@ -190,43 +196,43 @@
                     <h2 class="section__title">My Technical Level</h2>
                 </div>
                 <div class="skills__grid">
-                    <div class="skills__card reveal" data-skill="mobile">
+                    <div class="skills__card reveal" data-skill="mobile" role="button" tabindex="0" aria-controls="skill-modal-mobile" aria-label="View mobile development details">
                         <i class="uil uil-mobile-android skills__card-icon"></i>
                         <h3 class="skills__card-title">Mobile Development</h3>
                         <div class="skills__tags">
                             <span class="skills__tag">Flutter</span>
                             <span class="skills__tag">Dart</span>
                             <span class="skills__tag">Firebase</span>
-                            <span class="skills__tag">REST APIs</span>
-                            <span class="skills__tag">State Management</span>
+                            <span class="skills__tag">React Native</span>
+                            <span class="skills__tag">Offline-First</span>
                         </div>
                         <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
                     </div>
-                    <div class="skills__card reveal" data-skill="frontend">
+                    <div class="skills__card reveal" data-skill="frontend" role="button" tabindex="0" aria-controls="skill-modal-frontend" aria-label="View frontend development details">
                         <i class="uil uil-brackets-curly skills__card-icon"></i>
                         <h3 class="skills__card-title">Frontend Development</h3>
                         <div class="skills__tags">
-                            <span class="skills__tag">HTML</span>
-                            <span class="skills__tag">CSS</span>
-                            <span class="skills__tag">JavaScript</span>
+                            <span class="skills__tag">TypeScript</span>
                             <span class="skills__tag">React</span>
-                            <span class="skills__tag">Responsive Design</span>
+                            <span class="skills__tag">Next.js</span>
+                            <span class="skills__tag">Tailwind CSS</span>
+                            <span class="skills__tag">Accessibility</span>
                         </div>
                         <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
                     </div>
-                    <div class="skills__card reveal" data-skill="backend">
+                    <div class="skills__card reveal" data-skill="backend" role="button" tabindex="0" aria-controls="skill-modal-backend" aria-label="View backend development details">
                         <i class="uil uil-server-network skills__card-icon"></i>
                         <h3 class="skills__card-title">Backend Development</h3>
                         <div class="skills__tags">
-                            <span class="skills__tag">Python</span>
-                            <span class="skills__tag">Node.js</span>
-                            <span class="skills__tag">PHP</span>
-                            <span class="skills__tag">Databases</span>
-                            <span class="skills__tag">API Design</span>
+                            <span class="skills__tag">FastAPI</span>
+                            <span class="skills__tag">NestJS</span>
+                            <span class="skills__tag">PostgreSQL</span>
+                            <span class="skills__tag">Prisma</span>
+                            <span class="skills__tag">REST APIs</span>
                         </div>
                         <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
                     </div>
-                    <div class="skills__card reveal" data-skill="uiux">
+                    <div class="skills__card reveal" data-skill="uiux" role="button" tabindex="0" aria-controls="skill-modal-uiux" aria-label="View UI and UX design details">
                         <i class="uil uil-palette skills__card-icon"></i>
                         <h3 class="skills__card-title">UI/UX Design</h3>
                         <div class="skills__tags">
@@ -238,12 +244,24 @@
                         </div>
                         <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
                     </div>
+                    <div class="skills__card reveal" data-skill="ai" role="button" tabindex="0" aria-controls="skill-modal-ai" aria-label="View AI automation details">
+                        <i class="uil uil-robot skills__card-icon"></i>
+                        <h3 class="skills__card-title">AI Automation</h3>
+                        <div class="skills__tags">
+                            <span class="skills__tag">Agentic Workflows</span>
+                            <span class="skills__tag">Structured Outputs</span>
+                            <span class="skills__tag">Human Review</span>
+                            <span class="skills__tag">LLM Evaluation</span>
+                            <span class="skills__tag">Browser Automation</span>
+                        </div>
+                        <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
+                    </div>
                 </div>
 
                 <!-- Skill Modals -->
-                <div class="skill-modal" id="skill-modal-mobile">
+                <div class="skill-modal" id="skill-modal-mobile" role="dialog" aria-modal="true" aria-label="Mobile development details" aria-hidden="true">
                     <div class="skill-modal__content">
-                        <button class="skill-modal__close"><i class="uil uil-times"></i></button>
+                        <button type="button" class="skill-modal__close" aria-label="Close mobile development details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-mobile-android skill-modal__icon"></i>
                         <h3 class="skill-modal__title">Mobile Development</h3>
                         <p class="skill-modal__desc">With over 3 years of hands-on experience, I specialize in building high-performance, cross-platform mobile applications using <strong>Flutter</strong> and <strong>Dart</strong>. My expertise spans the full mobile development lifecycle — from UI/UX implementation to backend integration.</p>
@@ -255,9 +273,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-modal" id="skill-modal-frontend">
+                <div class="skill-modal" id="skill-modal-frontend" role="dialog" aria-modal="true" aria-label="Frontend development details" aria-hidden="true">
                     <div class="skill-modal__content">
-                        <button class="skill-modal__close"><i class="uil uil-times"></i></button>
+                        <button type="button" class="skill-modal__close" aria-label="Close frontend development details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-brackets-curly skill-modal__icon"></i>
                         <h3 class="skill-modal__title">Frontend Development</h3>
                         <p class="skill-modal__desc">I craft responsive, accessible, and visually polished web interfaces. From semantic HTML to modern JavaScript frameworks, I deliver frontend experiences that are fast, beautiful, and user-friendly.</p>
@@ -269,9 +287,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-modal" id="skill-modal-backend">
+                <div class="skill-modal" id="skill-modal-backend" role="dialog" aria-modal="true" aria-label="Backend development details" aria-hidden="true">
                     <div class="skill-modal__content">
-                        <button class="skill-modal__close"><i class="uil uil-times"></i></button>
+                        <button type="button" class="skill-modal__close" aria-label="Close backend development details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-server-network skill-modal__icon"></i>
                         <h3 class="skill-modal__title">Backend Development</h3>
                         <p class="skill-modal__desc">I design and build robust server-side architectures that power reliable, scalable applications. From RESTful API design to database management, I handle the full backend stack.</p>
@@ -284,9 +302,9 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-modal" id="skill-modal-uiux">
+                <div class="skill-modal" id="skill-modal-uiux" role="dialog" aria-modal="true" aria-label="UI and UX design details" aria-hidden="true">
                     <div class="skill-modal__content">
-                        <button class="skill-modal__close"><i class="uil uil-times"></i></button>
+                        <button type="button" class="skill-modal__close" aria-label="Close UI and UX design details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-palette skill-modal__icon"></i>
                         <h3 class="skill-modal__title">UI/UX Design</h3>
                         <p class="skill-modal__desc">I create intuitive, user-centered designs that balance aesthetics with usability. From initial research and wireframes to polished, production-ready prototypes, I ensure every interface is thoughtful, accessible, and visually engaging.</p>
@@ -295,6 +313,20 @@
                             <li><strong>Wireframing & Prototyping</strong> — Low-fidelity sketches to high-fidelity clickable prototypes for rapid iteration and stakeholder feedback.</li>
                             <li><strong>User Research</strong> — User interviews, personas, journey mapping, and usability testing to validate design decisions with real data.</li>
                             <li><strong>Design Systems</strong> — Building scalable design tokens, reusable component libraries, and style guides that ensure consistency across products.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="skill-modal" id="skill-modal-ai" role="dialog" aria-modal="true" aria-label="AI automation details" aria-hidden="true">
+                    <div class="skill-modal__content">
+                        <button type="button" class="skill-modal__close" aria-label="Close AI automation details"><i class="uil uil-times"></i></button>
+                        <i class="uil uil-robot skill-modal__icon"></i>
+                        <h3 class="skill-modal__title">AI Automation</h3>
+                        <p class="skill-modal__desc">I design AI-assisted workflows around a real operational problem, then keep deterministic rules and human approval where the system needs accountability.</p>
+                        <ul class="skill-modal__list">
+                            <li><strong>Workflow design</strong> - Map inputs, exceptions, owners, approval points, and a measurable outcome before choosing a model or tool.</li>
+                            <li><strong>Structured outputs</strong> - Validate AI responses with schemas and deterministic business logic instead of parsing free-form prose.</li>
+                            <li><strong>Human review</strong> - Keep customer-facing messages, commercial decisions, and sensitive updates behind a named reviewer.</li>
+                            <li><strong>Testing and observability</strong> - Cover normal cases, missing data, provider failures, and handoffs before real work depends on the workflow.</li>
                         </ul>
                     </div>
                 </div>
@@ -323,37 +355,55 @@
                         <div class="qualification__item reveal">
                             <div class="qualification__dot"></div>
                             <div class="qualification__card">
-                                <h3>Fulltime Flutter Developer</h3>
+                                <h3>Founder &amp; AI Automation Engineer</h3>
+                                <span class="qualification__company">Stealth Overlay</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2026 - Present</span>
+                                <p class="qualification__desc">Built a consultancy site and workflow product for boutique agencies, with fixed-price consultations, inquiry routing, persistent lead capture, protected admin views, and human approval checkpoints.</p>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Founder &amp; Full-Stack Product Engineer</h3>
+                                <span class="qualification__company">Nourish</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2026 - Present</span>
+                                <p class="qualification__desc">Building an offline-first Ethiopian nutrition tracker with Flutter, React Native, NestJS, Prisma, and PostgreSQL. Nutrition values come from 722 published food rows and deterministic calculations, not model guesses.</p>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Founder &amp; Full-Stack Engineer</h3>
+                                <span class="qualification__company">FreightPilot</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2026 - Present</span>
+                                <p class="qualification__desc">Building logistics operations software across FastAPI, PostgreSQL, React, Next.js, and Electron. The platform covers inventory, orders, forecasting, route optimization, subscriptions, and proof of delivery.</p>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>iOS Engineer &amp; AI Data Evaluator</h3>
+                                <span class="qualification__company">Shield P2P</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 02/2025 - 09/2026</span>
+                                <p class="qualification__desc">Developed Swift and MVVM iOS applications with XCTest coverage, evaluated AI-generated software for correctness and security, and documented rationales for supervised fine-tuning workflows.</p>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Flutter Developer &amp; LMS Co-Developer</h3>
                                 <span class="qualification__company">Rhobot Capitals</span>
-                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2025 — Present</span>
-                                <p class="qualification__desc">Developing and maintaining the Rhobot Capitals Forex trading mobile application. Building real-time market data features, chart integrations, and secure payment flows using Flutter, Dart, and Firebase.</p>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2025 - Present</span>
+                                <p class="qualification__desc">Built the Forex trading app with Flutter, Firebase, WebSockets, charts, and secure payments. Co-built an LMS serving 2,000+ active students with video, assessments, and automated certificates.</p>
                             </div>
                         </div>
                         <div class="qualification__item reveal">
                             <div class="qualification__dot"></div>
                             <div class="qualification__card">
-                                <h3>LMS Co-Developer</h3>
-                                <span class="qualification__company">rhobotcapitals.com Academy</span>
-                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2025 — Present</span>
-                                <p class="qualification__desc">Co-built an end-to-end Learning Management System from scratch. Implemented course management, video streaming, student dashboards, progress tracking, and certificate generation for the academy platform.</p>
-                            </div>
-                        </div>
-                        <div class="qualification__item reveal">
-                            <div class="qualification__dot"></div>
-                            <div class="qualification__card">
-                                <h3>Flutter App Developer</h3>
-                                <span class="qualification__company">Freelance / App Development</span>
-                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2022 — 2023</span>
-                                <p class="qualification__desc">Built multiple cross-platform mobile applications for clients including e-commerce, social media, and utility apps. Handled the full lifecycle from prototyping to deployment on App Store and Google Play.</p>
-                            </div>
-                        </div>
-                        <div class="qualification__item reveal">
-                            <div class="qualification__dot"></div>
-                            <div class="qualification__card">
-                                <h3>Freelance Website Builder</h3>
-                                <span class="qualification__company">Fiverr</span>
-                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2021 — 2022</span>
-                                <p class="qualification__desc">Delivered 10+ custom websites for international clients on Fiverr. Specialized in landing pages, portfolio sites, and small business websites using HTML, CSS, JavaScript, and WordPress.</p>
+                                <h3>Web Application Developer</h3>
+                                <span class="qualification__company">Chiraro Digital Solutions</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 06/2023 - 12/2024</span>
+                                <p class="qualification__desc">Built and maintained React applications, refactored legacy code, and improved technical SEO and performance, increasing client traffic by up to 40%.</p>
                             </div>
                         </div>
                     </div>
@@ -368,6 +418,15 @@
                                 <span class="qualification__company">University of the People</span>
                                 <span class="qualification__date"><i class="uil uil-calendar-alt"></i> July 2023 — November 2025</span>
                                 <p class="qualification__desc">Completed a fully accredited online BS in Computer Science. Coursework covered data structures & algorithms, operating systems, software engineering, databases, networking, and discrete mathematics.</p>
+                            </div>
+                        </div>
+                        <div class="qualification__item reveal">
+                            <div class="qualification__dot"></div>
+                            <div class="qualification__card">
+                                <h3>Bachelor of Science in Chemical Engineering</h3>
+                                <span class="qualification__company">Addis Ababa Science and Technology University</span>
+                                <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2021 - 2025</span>
+                                <p class="qualification__desc">Engineering degree completed alongside the computer science and software engineering path.</p>
                             </div>
                         </div>
                         <div class="qualification__item reveal">
@@ -421,36 +480,36 @@
                 <div class="services__grid">
                     <div class="services__card reveal">
                         <div class="services__card-number">01</div>
-                        <i class="uil uil-apps services__card-icon"></i>
-                        <h3 class="services__card-title">App<br>Development</h3>
-                        <p class="services__card-desc">Cross-platform mobile apps with Flutter. Custom API integration. Smooth, pixel-perfect UX/UI.</p>
+                        <i class="uil uil-web-grid services__card-icon"></i>
+                        <h3 class="services__card-title">Product<br>Engineering</h3>
+                        <p class="services__card-desc">Full-stack products built across React, Next.js, APIs, PostgreSQL, deployment, and automated release checks.</p>
                         <a href="#contact" class="services__card-link">
                             Learn more <i class="uil uil-arrow-right"></i>
                         </a>
                     </div>
                     <div class="services__card reveal">
                         <div class="services__card-number">02</div>
-                        <i class="uil uil-arrow services__card-icon"></i>
-                        <h3 class="services__card-title">LMS<br>Development</h3>
-                        <p class="services__card-desc">Custom Learning Management Systems. Complete academic platform integration. Student/teacher dashboards.</p>
+                        <i class="uil uil-robot services__card-icon"></i>
+                        <h3 class="services__card-title">AI Workflow<br>Automation</h3>
+                        <p class="services__card-desc">Agentic workflows with deterministic rules, structured outputs, integrations, and human approval checkpoints.</p>
                         <a href="#contact" class="services__card-link">
                             Learn more <i class="uil uil-arrow-right"></i>
                         </a>
                     </div>
                     <div class="services__card reveal">
                         <div class="services__card-number">03</div>
-                        <i class="uil uil-web-grid services__card-icon"></i>
-                        <h3 class="services__card-title">Full-Stack<br>Development</h3>
-                        <p class="services__card-desc">Dynamic frontend interfaces. Secure backend architecture. Database management and integration.</p>
+                        <i class="uil uil-mobile-android services__card-icon"></i>
+                        <h3 class="services__card-title">Mobile<br>Products</h3>
+                        <p class="services__card-desc">Cross-platform apps in Flutter and React Native with offline persistence, real-time data, and API integration.</p>
                         <a href="#contact" class="services__card-link">
                             Learn more <i class="uil uil-arrow-right"></i>
                         </a>
                     </div>
                     <div class="services__card reveal">
                         <div class="services__card-number">04</div>
-                        <i class="uil uil-palette services__card-icon"></i>
-                        <h3 class="services__card-title">UI/UX<br>Design</h3>
-                        <p class="services__card-desc">User-centered interfaces designed in Figma. Wireframing, prototyping, and usability testing for seamless experiences.</p>
+                        <i class="uil uil-layer-group services__card-icon"></i>
+                        <h3 class="services__card-title">SaaS<br>Platforms</h3>
+                        <p class="services__card-desc">Company onboarding, roles, subscriptions, usage metering, dashboards, and operations tooling for service teams.</p>
                         <a href="#contact" class="services__card-link">
                             Learn more <i class="uil uil-arrow-right"></i>
                         </a>
@@ -469,9 +528,69 @@
                 <div class="portfolio__grid">
                     <div class="portfolio__card reveal">
                         <div class="portfolio__card-img">
-                            <img src="assets/img/website.jpg" alt="Rhobot Capitals LMS" width="600" height="400" loading="lazy" decoding="async">
+                            <img src="assets/img/projects/nourish.png" alt="Nourish Ethiopian nutrition tracker homepage" width="1440" height="900" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://rhobotcapitals.com/" target="_blank" class="portfolio__card-btn">
+                                <a href="https://nourish-kylosonic.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the live Nourish product">
+                                    View Live Product <i class="uil uil-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-info">
+                            <span class="portfolio__card-tag">AI Nutrition Product</span>
+                            <h3 class="portfolio__card-title">Nourish</h3>
+                            <p class="portfolio__card-desc">An offline-first Ethiopian nutrition tracker with photo and text meal analysis, exact portions, and source-backed nutrition values.</p>
+                            <div class="portfolio__card-tools" aria-label="Nourish technical highlights">
+                                <span>722 food rows</span>
+                                <span>Offline-first</span>
+                                <span>Flutter + React Native</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio__card reveal">
+                        <div class="portfolio__card-img">
+                            <img src="assets/img/projects/freightpilot.png" alt="FreightPilot logistics software homepage" width="1440" height="900" loading="lazy" decoding="async">
+                            <div class="portfolio__card-overlay">
+                                <a href="https://product-web-chi.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the live FreightPilot product">
+                                    View Live Product <i class="uil uil-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-info">
+                            <span class="portfolio__card-tag">Logistics SaaS</span>
+                            <h3 class="portfolio__card-title">FreightPilot</h3>
+                            <p class="portfolio__card-desc">A logistics operations platform for inventory, orders, forecasting, route optimization, subscriptions, and delivery handoffs.</p>
+                            <div class="portfolio__card-tools" aria-label="FreightPilot technical highlights">
+                                <span>FastAPI + PostgreSQL</span>
+                                <span>React operations console</span>
+                                <span>Next.js + Electron</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio__card reveal">
+                        <div class="portfolio__card-img">
+                            <img src="assets/img/projects/stealth-overlay.png" alt="Stealth Overlay AI workflow consultancy homepage" width="1440" height="900" loading="lazy" decoding="async">
+                            <div class="portfolio__card-overlay">
+                                <a href="https://www.stealthoverlay.com/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the live Stealth Overlay product">
+                                    View Live Product <i class="uil uil-arrow-up-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="portfolio__card-info">
+                            <span class="portfolio__card-tag">AI Automation</span>
+                            <h3 class="portfolio__card-title">Stealth Overlay</h3>
+                            <p class="portfolio__card-desc">AI operations for boutique agencies, focused on inquiries, proposals, onboarding, and reporting with controlled handoffs.</p>
+                            <div class="portfolio__card-tools" aria-label="Stealth Overlay technical highlights">
+                                <span>Human review</span>
+                                <span>Next.js + TypeScript</span>
+                                <span>PostgreSQL + Vercel KV</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio__card reveal">
+                        <div class="portfolio__card-img">
+                            <img src="assets/img/website.jpg" alt="Rhobot Capitals Academy learning platform" width="600" height="400" loading="lazy" decoding="async">
+                            <div class="portfolio__card-overlay">
+                                <a href="https://rhobotcapitals.com/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View Rhobot Capitals Academy">
                                     View Project <i class="uil uil-arrow-up-right"></i>
                                 </a>
                             </div>
@@ -479,22 +598,32 @@
                         <div class="portfolio__card-info">
                             <span class="portfolio__card-tag">LMS Platform</span>
                             <h3 class="portfolio__card-title">Rhobot Capitals Academy</h3>
-                            <p class="portfolio__card-desc">A complete Learning Management Platform built from the ground up tailored for modern educational needs.</p>
+                            <p class="portfolio__card-desc">A learning platform serving 2,000+ students with course management, secure video, progress tracking, and automated certificates.</p>
+                            <div class="portfolio__card-tools" aria-label="Rhobot Academy highlights">
+                                <span>2,000+ students</span>
+                                <span>Automated certificates</span>
+                                <span>Course dashboards</span>
+                            </div>
                         </div>
                     </div>
                     <div class="portfolio__card reveal">
                         <div class="portfolio__card-img">
-                            <img src="assets/img/website2.jpg" alt="Rhobot Capitals Forex Trading App" width="600" height="400" loading="lazy" decoding="async">
+                            <img src="assets/img/website2.jpg" alt="Rhobot Capitals Forex trading application" width="600" height="400" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://github.com/kylosonic" target="_blank" class="portfolio__card-btn">
-                                    View Project <i class="uil uil-arrow-up-right"></i>
+                                <a href="https://github.com/kylosonic" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View more mobile projects on GitHub">
+                                    View Projects <i class="uil uil-arrow-up-right"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="portfolio__card-info">
                             <span class="portfolio__card-tag">Mobile App</span>
-                            <h3 class="portfolio__card-title">Rhobot Capitals Trading App</h3>
-                            <p class="portfolio__card-desc">Cross-platform Forex trading app built with Flutter featuring real-time market data, interactive charts, and secure payment integration.</p>
+                            <h3 class="portfolio__card-title">Rhobot Capitals Trading</h3>
+                            <p class="portfolio__card-desc">Cross-platform Forex trading app with real-time market data, interactive charts, state management, and secure payments.</p>
+                            <div class="portfolio__card-tools" aria-label="Rhobot trading highlights">
+                                <span>Flutter + Firebase</span>
+                                <span>30% lower data latency</span>
+                                <span>Live market data</span>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -506,7 +635,7 @@
             <div class="cta__container container reveal">
                 <div class="cta__data">
                     <h2 class="cta__title">Have a new project?</h2>
-                    <p class="cta__desc">Contact me now and get a modern, robust solution tailored to your needs.</p>
+                    <p class="cta__desc">Tell me what you are building, where the current workflow breaks, and what success should look like.</p>
                     <a href="#contact" class="cta__btn">
                         Contact Me <i class="uil uil-message"></i>
                     </a>
@@ -529,7 +658,7 @@
                             </div>
                             <div>
                                 <h3 class="contact__detail-title">Call Me</h3>
-                                <span class="contact__detail-value">+251941927360</span>
+                                <a class="contact__detail-value" href="tel:+251941927360">+251 941 927 360</a>
                             </div>
                         </div>
                         <div class="contact__detail">
@@ -538,7 +667,7 @@
                             </div>
                             <div>
                                 <h3 class="contact__detail-title">Email</h3>
-                                <span class="contact__detail-value">nahomg761@gmail.com</span>
+                                <a class="contact__detail-value" href="mailto:nahomg761@gmail.com">nahomg761@gmail.com</a>
                             </div>
                         </div>
                         <div class="contact__detail">
@@ -547,7 +676,7 @@
                             </div>
                             <div>
                                 <h3 class="contact__detail-title">Location</h3>
-                                <span class="contact__detail-value">Ethiopia — Addis Ababa, Lafto</span>
+                                <span class="contact__detail-value">Addis Ababa, Ethiopia | Open to remote</span>
                             </div>
                         </div>
                     </div>
@@ -586,7 +715,7 @@
             <div class="footer__top">
                 <div class="footer__brand">
                     <h2 class="footer__logo">Nahom</h2>
-                    <p class="footer__tagline">Flutter Developer</p>
+                    <p class="footer__tagline">Software Engineer &amp; Founder</p>
                 </div>
                 <ul class="footer__links">
                     <li><a href="#services" class="footer__link">Services</a></li>
@@ -601,10 +730,10 @@
                     <a href="https://t.me/kylosonic" target="_blank" class="footer__social" aria-label="Telegram">
                         <i class="uil uil-telegram-alt"></i>
                     </a>
-                    <a href="https://twitter.com/kylosonic" target="_blank" class="footer__social" aria-label="Twitter">
-                        <i class="uil uil-twitter-alt"></i>
+                    <a href="https://www.linkedin.com/in/nahomgwoldemichael" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="LinkedIn">
+                        <i class="uil uil-linkedin-alt"></i>
                     </a>
-                    <a href="https://github.com/kylosonic" target="_blank" class="footer__social" aria-label="GitHub">
+                    <a href="https://github.com/kylosonic" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="GitHub">
                         <i class="uil uil-github-alt"></i>
                     </a>
                 </div>
