@@ -6,6 +6,7 @@ Personal portfolio for Nahom Girma, a software engineer and founder working acro
 
 - Nourish: offline-first Ethiopian nutrition tracking
 - FreightPilot: logistics operations SaaS
+- OpenContext: evidence-linked video context for text-only AI and coding agents
 - Stealth Overlay: AI automation for boutique agencies
 - Rhobot Capitals Academy and trading app
 
