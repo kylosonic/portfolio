@@ -1357,6 +1357,14 @@ body.dark-theme .about__img {
     margin-top: 1.5rem;
 }
 
+.contact__availability {
+    max-width: 34rem;
+    margin-top: 0.75rem;
+    color: var(--color-text-secondary);
+    font-size: var(--fs-small);
+    line-height: 1.7;
+}
+
 .contact__detail {
     display: flex;
     align-items: center;
