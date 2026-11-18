@@ -8,15 +8,29 @@ const navMenu = document.getElementById('nav-menu');
 const navToggle = document.getElementById('nav-toggle');
 const navClose = document.getElementById('nav-close');
 const navLinks = document.querySelectorAll('.nav__link');
+const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)');
 
 function setNavState(isOpen) {
     navToggle?.setAttribute('aria-expanded', String(isOpen));
+    navToggle?.setAttribute('aria-label', isOpen ? 'Close navigation' : 'Open navigation');
+    document.body.classList.toggle('menu-open', isOpen);
+
+    if (window.innerWidth <= 768) {
+        navMenu?.toggleAttribute('inert', !isOpen);
+    } else {
+        navMenu?.removeAttribute('inert');
+    }
 }
+
+if (window.innerWidth <= 768) setNavState(false);
 
 if (navToggle) {
     navToggle.addEventListener('click', () => {
-        navMenu.classList.add('show-menu');
-        setNavState(true);
+        const isOpen = navMenu.classList.contains('show-menu');
+        navMenu.classList.toggle('show-menu', !isOpen);
+        setNavState(!isOpen);
+        if (!isOpen) navClose?.focus();
     });
 }
 if (navClose) {
@@ -33,6 +47,43 @@ navLinks.forEach(link => {
     });
 });
 
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && navMenu?.classList.contains('show-menu')) {
+        navMenu.classList.remove('show-menu');
+        setNavState(false);
+        navToggle?.focus();
+    }
+
+    if (event.key === 'Tab' && navMenu?.classList.contains('show-menu')) {
+        const focusable = [navClose, ...navLinks].filter(Boolean);
+        const first = focusable[0];
+        const last = focusable[focusable.length - 1];
+
+        if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+        }
+    }
+});
+
+document.addEventListener('click', (event) => {
+    if (!navMenu?.classList.contains('show-menu')) return;
+    if (event.target.closest('.nav')) return;
+
+    navMenu.classList.remove('show-menu');
+    setNavState(false);
+});
+
+window.addEventListener('resize', () => {
+    if (window.innerWidth > 768 && navMenu?.classList.contains('show-menu')) {
+        navMenu.classList.remove('show-menu');
+        setNavState(false);
+    }
+});
+
 // ==================== SCROLL HEADER ====================
 function scrollHeader() {
     const header = document.getElementById('header');
@@ -42,7 +93,6 @@ function scrollHeader() {
         header.classList.remove('scroll-header');
     }
 }
-window.addEventListener('scroll', scrollHeader);
 
 // ==================== ACTIVE NAV LINK ====================
 const sections = document.querySelectorAll('section[id]');
@@ -65,7 +115,6 @@ function scrollActive() {
         }
     });
 }
-window.addEventListener('scroll', scrollActive);
 
 // ==================== SCROLL TO TOP BUTTON ====================
 function scrollUp() {
@@ -76,15 +125,35 @@ function scrollUp() {
         scrollUp.classList.remove('show-scroll');
     }
 }
-window.addEventListener('scroll', scrollUp);
+
+let scrollFrame = 0;
+window.addEventListener('scroll', () => {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(() => {
+        scrollHeader();
+        scrollActive();
+        scrollUp();
+        scrollFrame = 0;
+    });
+}, { passive: true });
+scrollHeader();
+scrollActive();
+scrollUp();
 
 // ==================== DARK / LIGHT THEME ====================
 const themeButton = document.getElementById('theme-button');
 const darkTheme = 'dark-theme';
 const iconTheme = 'uil-sun';
 
-const selectedTheme = localStorage.getItem('selected-theme');
-const selectedIcon = localStorage.getItem('selected-icon');
+let selectedTheme = null;
+let selectedIcon = null;
+try {
+    selectedTheme = localStorage.getItem('selected-theme');
+    selectedIcon = localStorage.getItem('selected-icon');
+} catch {
+    selectedTheme = null;
+    selectedIcon = null;
+}
 
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light';
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'uil-moon' : 'uil-sun';
@@ -94,33 +163,62 @@ if (selectedTheme) {
     themeButton.classList[selectedIcon === 'uil-moon' ? 'add' : 'remove'](iconTheme);
 }
 
-themeButton.addEventListener('click', () => {
+function updateThemeControl() {
+    const isDark = document.body.classList.contains(darkTheme);
+    themeButton.setAttribute('aria-pressed', String(isDark));
+    themeButton.setAttribute('aria-label', isDark ? 'Switch to light theme' : 'Switch to dark theme');
+}
+
+updateThemeControl();
+
+themeButton?.addEventListener('click', () => {
     document.body.classList.toggle(darkTheme);
     themeButton.classList.toggle(iconTheme);
-    localStorage.setItem('selected-theme', getCurrentTheme());
-    localStorage.setItem('selected-icon', getCurrentIcon());
+    updateThemeControl();
+    try {
+        localStorage.setItem('selected-theme', getCurrentTheme());
+        localStorage.setItem('selected-icon', getCurrentIcon());
+    } catch {
+        // Theme switching still works when storage is unavailable.
+    }
 });
 
 // ==================== QUALIFICATION TABS ====================
 const qualTabs = document.querySelectorAll('.qualification__tab');
 const qualContents = document.querySelectorAll('.qualification__content');
 
-qualTabs.forEach(tab => {
-    tab.addEventListener('click', () => {
-        const target = document.querySelector(tab.dataset.target);
+function activateQualificationTab(tab) {
+    const target = document.querySelector(tab.dataset.target);
+    if (!target) return;
 
-        // Remove active from all
-        qualTabs.forEach(t => t.classList.remove('qualification__tab--active'));
-        qualContents.forEach(c => c.classList.remove('qualification__content--active'));
+    qualTabs.forEach(item => {
+        item.classList.remove('qualification__tab--active');
+        item.setAttribute('aria-selected', 'false');
+        item.setAttribute('tabindex', '-1');
+    });
+    qualContents.forEach(content => content.classList.remove('qualification__content--active'));
 
-        // Add active
-        tab.classList.add('qualification__tab--active');
-        target.classList.add('qualification__content--active');
+    tab.classList.add('qualification__tab--active');
+    tab.setAttribute('aria-selected', 'true');
+    tab.setAttribute('tabindex', '0');
+    target.classList.add('qualification__content--active');
+}
+
+qualTabs.forEach((tab, index) => {
+    tab.addEventListener('click', () => activateQualificationTab(tab));
+    tab.addEventListener('keydown', (event) => {
+        if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+
+        event.preventDefault();
+        const direction = event.key === 'ArrowRight' ? 1 : -1;
+        const nextTab = qualTabs[(index + direction + qualTabs.length) % qualTabs.length];
+        activateQualificationTab(nextTab);
+        nextTab.focus();
     });
 });
 
 // ==================== SKILL MODALS ====================
-const skillCards = document.querySelectorAll('.skills__card[data-skill]');
+const skillTriggers = document.querySelectorAll('.skills__card-trigger');
 const skillModals = document.querySelectorAll('.skill-modal');
 const skillModalCloses = document.querySelectorAll('.skill-modal__close');
 let lastFocusedElement = null;
@@ -128,7 +226,9 @@ let lastFocusedElement = null;
 function closeSkillModals(restoreFocus = true) {
     skillModals.forEach(modal => {
         modal.classList.remove('active');
-        modal.setAttribute('aria-hidden', 'true');
+        window.setTimeout(() => {
+            if (!modal.classList.contains('active')) modal.hidden = true;
+        }, 350);
     });
     document.body.style.overflow = '';
 
@@ -137,32 +237,26 @@ function closeSkillModals(restoreFocus = true) {
     }
 }
 
-function openSkillModal(card) {
+function openSkillModal(trigger) {
+    const card = trigger.closest('.skills__card');
+    if (!card) return;
+
     const skillName = card.dataset.skill;
     const modal = document.getElementById('skill-modal-' + skillName);
     if (!modal) return;
 
-    lastFocusedElement = card;
-    modal.classList.add('active');
-    modal.setAttribute('aria-hidden', 'false');
+    lastFocusedElement = trigger;
+    modal.hidden = false;
     document.body.style.overflow = 'hidden';
     window.setTimeout(() => {
+        modal.classList.add('active');
         modal.querySelector('.skill-modal__close')?.focus();
-    }, 350);
+    }, 20);
 }
 
-// Open modal on card click
-skillCards.forEach(card => {
-    card.addEventListener('click', () => {
-        openSkillModal(card);
-    });
-
-    card.addEventListener('keydown', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            openSkillModal(card);
-        }
-    });
+// Open modal from the native button inside each skill card.
+skillTriggers.forEach(trigger => {
+    trigger.addEventListener('click', () => openSkillModal(trigger));
 });
 
 // Close modal on X button
@@ -183,13 +277,14 @@ skillModals.forEach(modal => {
 
 // Close modal on Escape key and keep keyboard focus inside the open dialog.
 document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
+    const openModal = document.querySelector('.skill-modal.active');
+
+    if (e.key === 'Escape' && openModal) {
         closeSkillModals();
         return;
     }
 
     if (e.key === 'Tab') {
-        const openModal = document.querySelector('.skill-modal.active');
         if (!openModal) return;
 
         const focusable = [...openModal.querySelectorAll('button, a[href], [tabindex]:not([tabindex="-1"])')];
@@ -210,25 +305,30 @@ document.addEventListener('keydown', (e) => {
 // ==================== SCROLL REVEAL (Intersection Observer) ====================
 const revealElements = document.querySelectorAll('.reveal');
 
-const revealObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry, index) => {
-        if (entry.isIntersecting) {
-            // Stagger the animations slightly
-            setTimeout(() => {
+if (!reducedMotion.matches && 'IntersectionObserver' in window) {
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry, index) => {
+            if (!entry.isIntersecting) return;
+
+            window.setTimeout(() => {
                 entry.target.classList.add('active');
             }, index * 80);
             revealObserver.unobserve(entry.target);
-        }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-});
 
-revealElements.forEach(el => revealObserver.observe(el));
+    revealElements.forEach(element => revealObserver.observe(element));
+} else {
+    revealElements.forEach(element => element.classList.add('active'));
+}
 
 // ==================== HERO ENTRANCE ANIMATION ====================
 window.addEventListener('load', () => {
+    if (reducedMotion.matches) return;
+
     // Staggered entrance for hero elements
     const heroPhoto = document.querySelector('.hero__photo');
     const heroName = document.querySelector('.hero__name');
@@ -276,7 +376,10 @@ window.addEventListener('load', () => {
 // ==================== SMOOTH ANCHOR SCROLL ====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
+        const targetId = this.getAttribute('href');
+        if (!targetId || targetId === '#') return;
+
+        const target = document.getElementById(targetId.slice(1));
         if (target) {
             e.preventDefault();
             const headerOffset = 80;
@@ -285,34 +388,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
             window.scrollTo({
                 top: offsetPos,
-                behavior: 'smooth'
+                behavior: reducedMotion.matches ? 'auto' : 'smooth'
             });
         }
     });
 });
 
-// ==================== BADGE CLICK -> SCROLL TO CONTACT ====================
-const heroBadge = document.getElementById('hero-badge');
-if (heroBadge) {
-    heroBadge.addEventListener('click', () => {
-        const contact = document.getElementById('contact');
-        if (contact) {
-            const headerOffset = 80;
-            const elementPos = contact.getBoundingClientRect().top;
-            const offsetPos = elementPos + window.pageYOffset - headerOffset;
-            window.scrollTo({ top: offsetPos, behavior: 'smooth' });
-        }
-    });
-}
-
 // ==================== PARALLAX BLOBS (subtle) ====================
-window.addEventListener('mousemove', (e) => {
+if (finePointer.matches && !reducedMotion.matches) {
     const blobs = document.querySelectorAll('.hero__blob');
-    const x = (e.clientX / window.innerWidth - 0.5) * 2;
-    const y = (e.clientY / window.innerHeight - 0.5) * 2;
+    let parallaxFrame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
 
-    blobs.forEach((blob, i) => {
-        const factor = (i + 1) * 8;
-        blob.style.transform = `translate(${x * factor}px, ${y * factor}px)`;
-    });
-});
+    window.addEventListener('pointermove', (event) => {
+        pointerX = (event.clientX / window.innerWidth - 0.5) * 2;
+        pointerY = (event.clientY / window.innerHeight - 0.5) * 2;
+        if (parallaxFrame) return;
+
+        parallaxFrame = window.requestAnimationFrame(() => {
+            blobs.forEach((blob, index) => {
+                const factor = (index + 1) * 8;
+                blob.style.transform = `translate(${pointerX * factor}px, ${pointerY * factor}px)`;
+            });
+            parallaxFrame = 0;
+        });
+    }, { passive: true });
+}

@@ -22,13 +22,8 @@
     <meta name="twitter:image" content="https://nahomwoldemichael.vercel.app/assets/img/og-image-v2.png">
     <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
     <!-- Icons -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="assets/icons/unicons-line.css">
 
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
@@ -61,7 +56,7 @@
                     <i class="uil uil-moon"></i>
                 </button>
                 <a href="assets/pdf/Nahom_Girma_Woldemichael_Resume.pdf" download class="nav__cta" id="download-cv-btn">
-                    Download CV <i class="uil uil-download-alt"></i>
+                    <span class="nav__cta-label">Download CV</span> <i class="uil uil-download-alt"></i>
                 </a>
                 <button type="button" class="nav__toggle" id="nav-toggle" aria-label="Open navigation" aria-controls="nav-menu" aria-expanded="false">
                     <i class="uil uil-bars"></i>
@@ -81,13 +76,13 @@
 
             <!-- Floating social sidebar -->
             <div class="hero__social">
-                <a href="https://instagram.com/kylosonic_" target="_blank" class="hero__social-link" aria-label="Instagram">
+                <a href="https://instagram.com/kylosonic_" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="Instagram">
                     <i class="uil uil-instagram"></i>
                 </a>
-                <a href="https://www.linkedin.com/in/nahomgwoldemichael" target="_blank" class="hero__social-link" aria-label="LinkedIn">
+                <a href="https://www.linkedin.com/in/nahomgwoldemichael" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
                     <i class="uil uil-linkedin-alt"></i>
                 </a>
-                <a href="https://github.com/kylosonic" target="_blank" class="hero__social-link" aria-label="GitHub">
+                <a href="https://github.com/kylosonic" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
                     <i class="uil uil-github-alt"></i>
                 </a>
             </div>
@@ -108,8 +103,8 @@
                     <img src="assets/img/about.jpg" alt="Nahom Girma, software engineer and founder" class="hero__photo" width="400" height="500" fetchpriority="high">
 
                     <!-- Rotating "Let's Talk" badge -->
-                    <div class="hero__badge" id="hero-badge">
-                        <svg viewBox="0 0 100 100" class="hero__badge-svg">
+                    <a class="hero__badge" id="hero-badge" href="#contact" aria-label="Come on let's talk • Come on let's talk • Contact Nahom">
+                        <svg viewBox="0 0 100 100" class="hero__badge-svg" aria-hidden="true" focusable="false">
                             <defs>
                                 <path id="circlePath" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0"/>
                             </defs>
@@ -118,12 +113,20 @@
                             </text>
                         </svg>
                         <i class="uil uil-arrow-up-right hero__badge-arrow"></i>
-                    </div>
+                    </a>
                 </div>
 
                 <div class="hero__info">
                     <h1 class="hero__name">Nahom<br>Girma</h1>
                     <p class="hero__title">SENIOR AI SYSTEMS ARCHITECT // FULL-STACK, AGENTIC INFRASTRUCTURE &amp; FLUTTER</p>
+                    <div class="hero__actions" role="group" aria-label="Primary actions">
+                        <a class="hero__action hero__action--primary" href="#portfolio">
+                            Explore selected work <i class="uil uil-arrow-right" aria-hidden="true"></i>
+                        </a>
+                        <a class="hero__action hero__action--secondary" href="#contact">
+                            Start a conversation <i class="uil uil-message" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
 
@@ -198,7 +201,7 @@
                     <h2 class="section__title">My Technical Level</h2>
                 </div>
                 <div class="skills__grid">
-                    <div class="skills__card reveal" data-skill="ai" role="button" tabindex="0" aria-controls="skill-modal-ai" aria-label="View AI systems, evals and agentic infrastructure details">
+                    <article class="skills__card reveal" data-skill="ai">
                         <i class="uil uil-robot skills__card-icon"></i>
                         <h3 class="skills__card-title">AI Systems, Evals &amp; Agentic Infra</h3>
                         <div class="skills__tags">
@@ -209,9 +212,9 @@
                             <span class="skills__tag">Structured Outputs</span>
                             <span class="skills__tag">vLLM / Tool Use</span>
                         </div>
-                        <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
-                    </div>
-                    <div class="skills__card reveal" data-skill="backend" role="button" tabindex="0" aria-controls="skill-modal-backend" aria-label="View distributed backend and data engineering details">
+                        <button class="skills__card-hint skills__card-trigger" type="button" aria-controls="skill-modal-ai" aria-label="View details for AI systems, evals and agentic infrastructure"><i class="uil uil-expand-arrows-alt"></i> View details</button>
+                    </article>
+                    <article class="skills__card reveal" data-skill="backend">
                         <i class="uil uil-server-network skills__card-icon"></i>
                         <h3 class="skills__card-title">Distributed Backend &amp; Data Engineering</h3>
                         <div class="skills__tags">
@@ -222,9 +225,9 @@
                             <span class="skills__tag">Redis / Queues</span>
                             <span class="skills__tag">GraphQL &amp; REST</span>
                         </div>
-                        <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
-                    </div>
-                    <div class="skills__card reveal" data-skill="frontend" role="button" tabindex="0" aria-controls="skill-modal-frontend" aria-label="View frontend architecture and generative UI details">
+                        <button class="skills__card-hint skills__card-trigger" type="button" aria-controls="skill-modal-backend" aria-label="View details for distributed backend and data engineering"><i class="uil uil-expand-arrows-alt"></i> View details</button>
+                    </article>
+                    <article class="skills__card reveal" data-skill="frontend">
                         <i class="uil uil-brackets-curly skills__card-icon"></i>
                         <h3 class="skills__card-title">Frontend Architecture &amp; Generative UI</h3>
                         <div class="skills__tags">
@@ -235,9 +238,9 @@
                             <span class="skills__tag">Playwright / Vitest</span>
                             <span class="skills__tag">WebSockets / SSE</span>
                         </div>
-                        <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
-                    </div>
-                    <div class="skills__card reveal" data-skill="mobile" role="button" tabindex="0" aria-controls="skill-modal-mobile" aria-label="View mobile engineering and on-device edge AI details">
+                        <button class="skills__card-hint skills__card-trigger" type="button" aria-controls="skill-modal-frontend" aria-label="View details for frontend architecture and generative UI"><i class="uil uil-expand-arrows-alt"></i> View details</button>
+                    </article>
+                    <article class="skills__card reveal" data-skill="mobile">
                         <i class="uil uil-mobile-android skills__card-icon"></i>
                         <h3 class="skills__card-title">Mobile Engineering &amp; On-Device Edge AI</h3>
                         <div class="skills__tags">
@@ -248,9 +251,9 @@
                             <span class="skills__tag">Native Bridges</span>
                             <span class="skills__tag">SQLite / Isar</span>
                         </div>
-                        <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
-                    </div>
-                    <div class="skills__card reveal" data-skill="uiux" role="button" tabindex="0" aria-controls="skill-modal-uiux" aria-label="View system design, DevOps and product UX details">
+                        <button class="skills__card-hint skills__card-trigger" type="button" aria-controls="skill-modal-mobile" aria-label="View details for mobile engineering and on-device edge AI"><i class="uil uil-expand-arrows-alt"></i> View details</button>
+                    </article>
+                    <article class="skills__card reveal" data-skill="uiux">
                         <i class="uil uil-palette skills__card-icon"></i>
                         <h3 class="skills__card-title">System Design, DevOps &amp; Product UX</h3>
                         <div class="skills__tags">
@@ -260,12 +263,12 @@
                             <span class="skills__tag">System Architecture</span>
                             <span class="skills__tag">Figma Design Systems</span>
                         </div>
-                        <span class="skills__card-hint"><i class="uil uil-expand-arrows-alt"></i> Click for details</span>
-                    </div>
+                        <button class="skills__card-hint skills__card-trigger" type="button" aria-controls="skill-modal-uiux" aria-label="View details for system design, DevOps and product UX"><i class="uil uil-expand-arrows-alt"></i> View details</button>
+                    </article>
                 </div>
 
                 <!-- Skill Modals -->
-                <div class="skill-modal" id="skill-modal-mobile" role="dialog" aria-modal="true" aria-label="Mobile engineering and on-device edge AI details" aria-hidden="true">
+                <div class="skill-modal" id="skill-modal-mobile" role="dialog" aria-modal="true" aria-label="Mobile engineering and on-device edge AI details" hidden>
                     <div class="skill-modal__content">
                         <button type="button" class="skill-modal__close" aria-label="Close mobile engineering and on-device edge AI details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-mobile-android skill-modal__icon"></i>
@@ -279,7 +282,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-modal" id="skill-modal-frontend" role="dialog" aria-modal="true" aria-label="Frontend architecture and generative UI details" aria-hidden="true">
+                <div class="skill-modal" id="skill-modal-frontend" role="dialog" aria-modal="true" aria-label="Frontend architecture and generative UI details" hidden>
                     <div class="skill-modal__content">
                         <button type="button" class="skill-modal__close" aria-label="Close frontend architecture and generative UI details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-brackets-curly skill-modal__icon"></i>
@@ -293,7 +296,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-modal" id="skill-modal-backend" role="dialog" aria-modal="true" aria-label="Distributed backend and data engineering details" aria-hidden="true">
+                <div class="skill-modal" id="skill-modal-backend" role="dialog" aria-modal="true" aria-label="Distributed backend and data engineering details" hidden>
                     <div class="skill-modal__content">
                         <button type="button" class="skill-modal__close" aria-label="Close distributed backend and data engineering details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-server-network skill-modal__icon"></i>
@@ -307,7 +310,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-modal" id="skill-modal-uiux" role="dialog" aria-modal="true" aria-label="System design, DevOps and product UX details" aria-hidden="true">
+                <div class="skill-modal" id="skill-modal-uiux" role="dialog" aria-modal="true" aria-label="System design, DevOps and product UX details" hidden>
                     <div class="skill-modal__content">
                         <button type="button" class="skill-modal__close" aria-label="Close system design, DevOps and product UX details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-palette skill-modal__icon"></i>
@@ -321,7 +324,7 @@
                         </ul>
                     </div>
                 </div>
-                <div class="skill-modal" id="skill-modal-ai" role="dialog" aria-modal="true" aria-label="AI systems, evals and agentic infrastructure details" aria-hidden="true">
+                <div class="skill-modal" id="skill-modal-ai" role="dialog" aria-modal="true" aria-label="AI systems, evals and agentic infrastructure details" hidden>
                     <div class="skill-modal__content">
                         <button type="button" class="skill-modal__close" aria-label="Close AI systems, evals and agentic infrastructure details"><i class="uil uil-times"></i></button>
                         <i class="uil uil-robot skill-modal__icon"></i>
@@ -346,16 +349,16 @@
                     <h2 class="section__title">My Journey</h2>
                 </div>
 
-                <div class="qualification__tabs">
-                    <button class="qualification__tab qualification__tab--active" data-target="#work">
+                <div class="qualification__tabs" role="tablist" aria-label="Qualification type">
+                    <button type="button" class="qualification__tab qualification__tab--active" id="qualification-tab-work" role="tab" aria-selected="true" aria-controls="work" tabindex="0" data-target="#work">
                         <i class="uil uil-briefcase-alt"></i> Work
                     </button>
-                    <button class="qualification__tab" data-target="#education">
+                    <button type="button" class="qualification__tab" id="qualification-tab-education" role="tab" aria-selected="false" aria-controls="education" tabindex="-1" data-target="#education">
                         <i class="uil uil-graduation-cap"></i> Education
                     </button>
                 </div>
 
-                <div class="qualification__content qualification__content--active" id="work">
+                <div class="qualification__content qualification__content--active" id="work" role="tabpanel" aria-labelledby="qualification-tab-work">
                     <div class="qualification__timeline">
                         <div class="qualification__item reveal">
                             <div class="qualification__dot"></div>
@@ -387,7 +390,7 @@
                     </div>
                 </div>
 
-                <div class="qualification__content" id="education">
+                <div class="qualification__content" id="education" role="tabpanel" aria-labelledby="qualification-tab-education">
                     <div class="qualification__timeline">
                         <div class="qualification__item reveal">
                             <div class="qualification__dot"></div>
@@ -395,7 +398,7 @@
                                 <h3>Bachelor of Science in Computer Science</h3>
                                 <span class="qualification__company">University of the People</span>
                                 <span class="qualification__date"><i class="uil uil-calendar-alt"></i> July 2023 - November 2025</span>
-                                <p class="qualification__desc">Completed a fully accredited online BS in Computer Science. Coursework covered data structures & algorithms, operating systems, software engineering, databases, networking and discrete mathematics.</p>
+                                <p class="qualification__desc">Completed a fully accredited online BS in Computer Science. Coursework covered data structures &amp; algorithms, operating systems, software engineering, databases, networking and discrete mathematics.</p>
                             </div>
                         </div>
                         <div class="qualification__item reveal">
@@ -411,7 +414,7 @@
                             <div class="qualification__dot"></div>
                             <div class="qualification__card">
                                 <h3>Software Engineering</h3>
-                                <span class="qualification__company">ALX-Africa & Holberton School</span>
+                                <span class="qualification__company">ALX-Africa &amp; Holberton School</span>
                                 <span class="qualification__date"><i class="uil uil-calendar-alt"></i> 2022 - 2023</span>
                                 <p class="qualification__desc">Intensive 12-month software engineering program covering C, Python, Linux systems programming, DevOps, algorithms and collaborative software projects with peer-based learning.</p>
                             </div>
@@ -457,7 +460,7 @@
                 </div>
                 <div class="services__grid">
                     <div class="services__card reveal">
-                        <div class="services__card-number">01</div>
+                        <div class="services__card-number" aria-hidden="true">01</div>
                         <i class="uil uil-robot services__card-icon"></i>
                         <h3 class="services__card-title">AI Systems &amp;<br>Agentic Infrastructure</h3>
                         <p class="services__card-desc">Custom MCP servers, stateful multi-agent workflows, RAG pipelines and automated LLM evaluation suites.</p>
@@ -466,7 +469,7 @@
                         </a>
                     </div>
                     <div class="services__card reveal">
-                        <div class="services__card-number">02</div>
+                        <div class="services__card-number" aria-hidden="true">02</div>
                         <i class="uil uil-web-grid services__card-icon"></i>
                         <h3 class="services__card-title">Full-Stack Web &amp;<br>Distributed APIs</h3>
                         <p class="services__card-desc">High-concurrency Next.js, TypeScript, FastAPI and Rust microservices backed by PostgreSQL and Redis.</p>
@@ -475,7 +478,7 @@
                         </a>
                     </div>
                     <div class="services__card reveal">
-                        <div class="services__card-number">03</div>
+                        <div class="services__card-number" aria-hidden="true">03</div>
                         <i class="uil uil-mobile-android services__card-icon"></i>
                         <h3 class="services__card-title">Offline-First Flutter &amp;<br>Mobile Systems</h3>
                         <p class="services__card-desc">Production iOS and Android apps with local database sync, native hardware bridges and on-device AI.</p>
@@ -488,19 +491,20 @@
         </section>
 
         <!-- ==================== PORTFOLIO ==================== -->
-        <section class="portfolio section" id="portfolio">
+        <section class="portfolio section" id="portfolio" aria-labelledby="portfolio-title">
             <div class="portfolio__container container">
                 <div class="portfolio__header reveal">
                     <span class="section__subtitle">Portfolio</span>
-                    <h2 class="section__title">Recent Work</h2>
+                    <h2 class="section__title" id="portfolio-title">Recent Work</h2>
+                    <p class="portfolio__intro">Four live products, with selected mobile, API, commerce and AI evaluation systems below.</p>
                 </div>
                 <div class="portfolio__grid">
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-demo="live">
                         <div class="portfolio__card-img">
                             <img src="assets/img/projects/nourish.png" alt="Nourish Ethiopian nutrition tracker homepage" width="1440" height="900" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://nourish-kylosonic.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the live Nourish product">
-                                    View Live Product <i class="uil uil-arrow-up-right"></i>
+                                <a href="https://nourish-kylosonic.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="Live demo: Nourish, opens in a new tab">
+                                    Live demo <i class="uil uil-arrow-up-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -508,39 +512,39 @@
                             <span class="portfolio__card-tag">AI Nutrition Product</span>
                             <h3 class="portfolio__card-title">Nourish</h3>
                             <p class="portfolio__card-desc">Built an offline-first mobile and web nutrition tracking platform featuring localized food database indexing, automated macro computation and deterministic local-to-cloud sync. Engineered for instant sub-50ms local query performance without active internet connectivity.</p>
-                            <div class="portfolio__card-tools" aria-label="Nourish technical highlights">
+                            <div class="portfolio__card-tools">
                                 <span>Offline-first mobile</span>
                                 <span>Automated macros</span>
                                 <span>722 localized food rows</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-demo="live">
                         <div class="portfolio__card-img">
-                            <img src="assets/img/projects/freightpilot.png" alt="FreightPilot logistics software homepage" width="1440" height="900" loading="lazy" decoding="async">
+                            <img src="assets/img/projects/freightpilot.png" alt="FreightPilot logistics homepage with route planning and cash review previews" width="1440" height="900" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://product-web-chi.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the live FreightPilot product">
-                                    View Live Product <i class="uil uil-arrow-up-right"></i>
+                                <a href="https://freightpilot.pages.dev/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="Live demo: FreightPilot, opens in a new tab">
+                                    Live demo <i class="uil uil-arrow-up-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
                         <div class="portfolio__card-info">
-                            <span class="portfolio__card-tag">Logistics SaaS</span>
+                            <span class="portfolio__card-tag">Logistics Operations SaaS</span>
                             <h3 class="portfolio__card-title">FreightPilot</h3>
-                            <p class="portfolio__card-desc">Designed a full-stack B2B supply chain and fleet routing platform using React, FastAPI, PostgreSQL and machine learning optimization. Automated 80% of manual dispatch workflows with structured document extraction and real-time route telemetry.</p>
-                            <div class="portfolio__card-tools" aria-label="FreightPilot technical highlights">
-                                <span>B2B logistics routing</span>
-                                <span>ML optimization</span>
-                                <span>Automated dispatch</span>
+                            <p class="portfolio__card-desc">Built a multi-tenant freight operations platform for route planning, dispatch, delivery proof and cash reconciliation. Web, desktop and API surfaces share live operational data and a self-serve workspace with bank transfer billing.</p>
+                            <div class="portfolio__card-tools">
+                                <span>Route planning + dispatch</span>
+                                <span>Exception tracking</span>
+                                <span>Cash reconciliation</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-demo="live">
                         <div class="portfolio__card-img">
                             <img src="assets/img/projects/opencontext.png" alt="OpenContext evidence-linked video analysis results" width="1440" height="900" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://opencontext-swart.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the live OpenContext product">
-                                    View Live Product <i class="uil uil-arrow-up-right"></i>
+                                <a href="https://opencontext-swart.vercel.app/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="Live demo: OpenContext, opens in a new tab">
+                                    Live demo <i class="uil uil-arrow-up-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -548,19 +552,19 @@
                             <span class="portfolio__card-tag">AI Developer Tooling</span>
                             <h3 class="portfolio__card-title">OpenContext</h3>
                             <p class="portfolio__card-desc">Architected an asynchronous multimodal indexing pipeline in Python, FastAPI and PostgreSQL that transforms long-form video into timestamp-verified context packets for text-only LLMs. Reduced prompt token overhead by 65% while maintaining citation accuracy via automated evaluation checks.</p>
-                            <div class="portfolio__card-tools" aria-label="OpenContext technical highlights">
+                            <div class="portfolio__card-tools">
                                 <span>Evidence-linked citations</span>
                                 <span>FastAPI processing</span>
                                 <span>Token-efficient LLM context</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-demo="live">
                         <div class="portfolio__card-img">
                             <img src="assets/img/projects/stealth-overlay.png" alt="Stealth Overlay AI workflow consultancy homepage" width="1440" height="900" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://www.stealthoverlay.com/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the live Stealth Overlay product">
-                                    View Live Product <i class="uil uil-arrow-up-right"></i>
+                                <a href="https://www.stealthoverlay.com/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="Live product: Stealth Overlay, opens in a new tab">
+                                    Live product <i class="uil uil-arrow-up-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -568,19 +572,19 @@
                             <span class="portfolio__card-tag">AI Automation</span>
                             <h3 class="portfolio__card-title">Stealth Overlay</h3>
                             <p class="portfolio__card-desc">Engineered a cross-platform desktop and web SaaS platform delivering sub-second contextual AI assistance during live technical workflows. Built with streaming WebSockets, low-latency audio/screen capture pipelines, structured LLM outputs and Stripe subscription billing.</p>
-                            <div class="portfolio__card-tools" aria-label="Stealth Overlay technical highlights">
+                            <div class="portfolio__card-tools">
                                 <span>Real-time assistance</span>
                                 <span>Audio + screen context</span>
                                 <span>Subscription SaaS</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-link="repository">
                         <div class="portfolio__card-img">
-                            <img src="assets/img/website3.jpg" alt="ProxyTunnel mobile networking interface" width="600" height="400" loading="lazy" decoding="async">
+                            <img src="assets/img/projects/proxytunnel.svg" alt="ProxyTunnel mobile proxy routing architecture" width="1200" height="750" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://github.com/kylosonic/ProxyTunnel" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the ProxyTunnel repository">
-                                    View Project <i class="uil uil-arrow-up-right"></i>
+                                <a href="https://github.com/kylosonic/ProxyTunnel" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="Repository: ProxyTunnel, opens in a new tab">
+                                    Repository <i class="uil uil-arrow-up-right" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -588,39 +592,19 @@
                             <span class="portfolio__card-tag">Networking + Mobile Systems</span>
                             <h3 class="portfolio__card-title">ProxyTunnel</h3>
                             <p class="portfolio__card-desc">A Swift and Kotlin proxy client with user-space TCP/IP packet handling, SOCKS5 and HTTP CONNECT support, DNS interception, secure credential storage and CI-built mobile artifacts.</p>
-                            <div class="portfolio__card-tools" aria-label="ProxyTunnel technical highlights">
+                            <div class="portfolio__card-tools">
                                 <span>Swift + Kotlin</span>
                                 <span>SOCKS5 + DNS</span>
                                 <span>iOS and Android tunnels</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
-                        <div class="portfolio__card-img">
-                            <img src="assets/img/website2.jpg" alt="CineFlix cross-platform movie discovery application" width="600" height="400" loading="lazy" decoding="async">
-                            <div class="portfolio__card-overlay">
-                                <a href="https://github.com/kylosonic/cineflix" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View the CineFlix repository">
-                                    View Project <i class="uil uil-arrow-up-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio__card-info">
-                            <span class="portfolio__card-tag">Cross-Platform Product</span>
-                            <h3 class="portfolio__card-title">CineFlix</h3>
-                            <p class="portfolio__card-desc">A Flutter movie discovery product for web, Android and iOS with authentication, watchlists, Riverpod state management, Supabase data and release automation.</p>
-                            <div class="portfolio__card-tools" aria-label="CineFlix technical highlights">
-                                <span>Flutter + Riverpod</span>
-                                <span>Supabase + TMDB</span>
-                                <span>CI release automation</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-link="inquiry">
                         <div class="portfolio__card-img">
                             <img src="assets/img/website.jpg" alt="Smart Retail e-commerce operations dashboard" width="600" height="400" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://github.com/kylosonic" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="Explore smart retail projects on GitHub">
-                                    View Projects <i class="uil uil-arrow-up-right"></i>
+                                <a href="#contact" class="portfolio__card-btn portfolio__card-btn--inquiry" aria-label="Project details: Smart Retail, ask Nahom">
+                                    Project details <i class="uil uil-message" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -628,19 +612,19 @@
                             <span class="portfolio__card-tag">Full-Stack Commerce</span>
                             <h3 class="portfolio__card-title">Smart Retail E-Commerce</h3>
                             <p class="portfolio__card-desc">A React and Node.js commerce platform with inventory tracking, mock payments, real-time sales visualization, JWT authentication and GitHub Actions deployment.</p>
-                            <div class="portfolio__card-tools" aria-label="Smart retail technical highlights">
+                            <div class="portfolio__card-tools">
                                 <span>React + Node.js</span>
                                 <span>MongoDB + JWT</span>
                                 <span>Real-time sales views</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-link="inquiry">
                         <div class="portfolio__card-img">
                             <img src="assets/img/project.jpg" alt="Automated task management API architecture" width="600" height="400" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://github.com/kylosonic" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="Explore backend projects on GitHub">
-                                    View Projects <i class="uil uil-arrow-up-right"></i>
+                                <a href="#contact" class="portfolio__card-btn portfolio__card-btn--inquiry" aria-label="Project details: task management API, ask Nahom">
+                                    Project details <i class="uil uil-message" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -648,19 +632,19 @@
                             <span class="portfolio__card-tag">Python Backend API</span>
                             <h3 class="portfolio__card-title">Automated Task Management API</h3>
                             <p class="portfolio__card-desc">A Django and PostgreSQL REST API for complex task workflows with optimized queries, sub-200-millisecond average response times and Postman endpoint coverage.</p>
-                            <div class="portfolio__card-tools" aria-label="Task API technical highlights">
+                            <div class="portfolio__card-tools">
                                 <span>Django + PostgreSQL</span>
                                 <span>Optimized queries</span>
                                 <span>Postman coverage</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-link="inquiry">
                         <div class="portfolio__card-img">
                             <img src="assets/img/project.jpg" alt="LLM Swift evaluation suite benchmark dashboard" width="600" height="400" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://github.com/kylosonic" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="Explore evaluation projects on GitHub">
-                                    View Projects <i class="uil uil-arrow-up-right"></i>
+                                <a href="#contact" class="portfolio__card-btn portfolio__card-btn--inquiry" aria-label="Project details: LLM Swift evaluation suite, ask Nahom">
+                                    Project details <i class="uil uil-message" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -668,19 +652,19 @@
                             <span class="portfolio__card-tag">LLM Evaluation</span>
                             <h3 class="portfolio__card-title">LLM Swift Evaluation Suite</h3>
                             <p class="portfolio__card-desc">A Swift and Python evaluation system with a 500-prompt benchmark, RLHF protocols, XCTest coverage and documented rationales for supervised fine-tuning.</p>
-                            <div class="portfolio__card-tools" aria-label="LLM evaluation technical highlights">
+                            <div class="portfolio__card-tools">
                                 <span>500-prompt benchmark</span>
                                 <span>RLHF protocols</span>
                                 <span>Swift + Python</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-link="inquiry">
                         <div class="portfolio__card-img">
                             <img src="assets/img/website.jpg" alt="Rhobot Capitals Academy learning platform" width="600" height="400" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://rhobotcapitals.com/" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View Rhobot Capitals Academy">
-                                    View Project <i class="uil uil-arrow-up-right"></i>
+                                <a href="#contact" class="portfolio__card-btn portfolio__card-btn--inquiry" aria-label="Client work: Rhobot Capitals Academy, ask Nahom">
+                                    Client work <i class="uil uil-message" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -688,19 +672,19 @@
                             <span class="portfolio__card-tag">LMS Platform</span>
                             <h3 class="portfolio__card-title">Rhobot Capitals Academy &amp; Trading Ecosystem</h3>
                             <p class="portfolio__card-desc">Co-engineered a high-concurrency Learning Management System and cross-platform Flutter trading companion app serving 2,000+ active users with real-time financial telemetry and role-based access control.</p>
-                            <div class="portfolio__card-tools" aria-label="Rhobot Academy highlights">
+                            <div class="portfolio__card-tools">
                                 <span>2,000+ students</span>
                                 <span>Automated certificates</span>
                                 <span>Course dashboards</span>
                             </div>
                         </div>
                     </div>
-                    <div class="portfolio__card reveal">
+                    <div class="portfolio__card reveal" data-link="inquiry">
                         <div class="portfolio__card-img">
                             <img src="assets/img/website2.jpg" alt="Rhobot Capitals Forex trading application" width="600" height="400" loading="lazy" decoding="async">
                             <div class="portfolio__card-overlay">
-                                <a href="https://github.com/kylosonic" target="_blank" rel="noopener noreferrer" class="portfolio__card-btn" aria-label="View more mobile projects on GitHub">
-                                    View Projects <i class="uil uil-arrow-up-right"></i>
+                                <a href="#contact" class="portfolio__card-btn portfolio__card-btn--inquiry" aria-label="Client work: Rhobot Capitals trading app, ask Nahom">
+                                    Client work <i class="uil uil-message" aria-hidden="true"></i>
                                 </a>
                             </div>
                         </div>
@@ -708,7 +692,7 @@
                             <span class="portfolio__card-tag">Mobile App</span>
                             <h3 class="portfolio__card-title">Rhobot Capitals Trading</h3>
                             <p class="portfolio__card-desc">Engineered a cross-platform Flutter trading companion with real-time financial telemetry, interactive charts, secure payments and role-based access for active traders.</p>
-                            <div class="portfolio__card-tools" aria-label="Rhobot trading highlights">
+                            <div class="portfolio__card-tools">
                                 <span>Flutter + Firebase</span>
                                 <span>30% lower data latency</span>
                                 <span>Live market data</span>
@@ -726,7 +710,7 @@
                     <h2 class="cta__title">Have a new project?</h2>
                     <p class="cta__desc">Tell me what you are building, where the current workflow breaks and what success should look like.</p>
                     <a href="#contact" class="cta__btn">
-                        Contact Me <i class="uil uil-message"></i>
+                        Contact Me <i class="uil uil-arrow-right" aria-hidden="true"></i>
                     </a>
                 </div>
                 <img src="assets/img/project.jpg" alt="Start a new project with Nahom" class="cta__img" width="500" height="400" loading="lazy" decoding="async">
@@ -748,7 +732,7 @@
                             </div>
                             <div>
                                 <h3 class="contact__detail-title">Call Me</h3>
-                                <a class="contact__detail-value" href="tel:+251941927360">+251 941 927 360</a>
+                                <a class="contact__detail-value" href="tel:+251941927360">+251&nbsp;941&nbsp;927&nbsp;360</a>
                             </div>
                         </div>
                         <div class="contact__detail">
@@ -792,7 +776,7 @@
                         <textarea id="contact-message" name="message" rows="5" placeholder="Write your message..." required></textarea>
                     </div>
                     <button type="submit" class="contact__submit">
-                        Send Message <i class="uil uil-message"></i>
+                        Send Message <i class="uil uil-arrow-right" aria-hidden="true"></i>
                     </button>
                 </form>
             </div>
@@ -814,10 +798,10 @@
                     <li><a href="#contact" class="footer__link">Contact</a></li>
                 </ul>
                 <div class="footer__socials">
-                    <a href="https://instagram.com/kylosonic_" target="_blank" class="footer__social" aria-label="Instagram">
+                    <a href="https://instagram.com/kylosonic_" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="Instagram">
                         <i class="uil uil-instagram"></i>
                     </a>
-                    <a href="https://t.me/kylosonic" target="_blank" class="footer__social" aria-label="Telegram">
+                    <a href="https://t.me/kylosonic" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="Telegram">
                         <i class="uil uil-telegram-alt"></i>
                     </a>
                     <a href="https://www.linkedin.com/in/nahomgwoldemichael" target="_blank" rel="noopener noreferrer" class="footer__social" aria-label="LinkedIn">
@@ -832,12 +816,10 @@
                 <p>&copy; 2026 Nahom Woldemichael. All rights reserved.</p>
             </div>
         </div>
+        <a href="#home" class="scrolltop" id="scroll-up" aria-label="Scroll to top">
+            <i class="uil uil-arrow-up"></i>
+        </a>
     </footer>
-
-    <!-- Scroll to top -->
-    <a href="#home" class="scrolltop" id="scroll-up" aria-label="Scroll to top">
-        <i class="uil uil-arrow-up"></i>
-    </a>
 
     <script src="main.js"></script>
 </body>
